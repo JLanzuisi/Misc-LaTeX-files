@@ -1,0 +1,1193 @@
+\documentclass[draft,9pt,letterpaper,twocolumn,openany]{extbook}
+%\usepackage[top=2cm,bottom=2cm,left=3.5cm,right=2cm]{geometry}
+\usepackage[top=2cm,bottom=2cm,marginpar=1.5cm]{geometry}
+\setlength{\columnsep}{.6cm}
+
+%\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{cochineal}% osf in text, lining figures in math
+\usepackage[scaled=1.04,varqu,varl]{inconsolata}% inconsolata typewriter
+\usepackage{AlegreyaSans}% sans serif
+%\usepackage[cochineal]{newtxmath}
+%\usepackage{ebgaramond-maths}
+%\linespread{1.04}
+
+\input Zallman.fd
+\newcommand*\initfamily{\usefont{U}{Zallman}{xl}{n}}
+
+%\newfontfamily{\itals}{etbook-italic}[
+%Path=/home/jhonny/.fonts/etbook/,
+%Extension=.otf,
+%]
+\usepackage[final]{microtype}
+
+\usepackage{titlesec,fancyhdr,adforn,cuted,pgfornament,lettrine,float}
+%\usepackage[document]{ragged2e}
+\usepackage{marginnote}
+\renewcommand*{\raggedleftmarginnote}{\flushright}
+\renewcommand*{\raggedrightmarginnote}{\flushleft}
+
+\makeatletter
+% package indentfirst says \let\@afterindentfalse\@afterindenttrue
+% and we revert this modification, reinstating the original definitio
+% of \@afterindentfalse
+\def\@afterindentfalse{\let\if@afterindent\iffalse}
+\makeatother
+
+\usepackage{nameref}
+\makeatletter
+\newcommand*{\currentname}{\@currentlabelname}
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{}
+\rhead{}
+\rfoot{\thepage} 
+\setlength{\headheight}{14pt}
+
+	\fancypagestyle{plain}{
+	\fancyhf{}
+	\rfoot{ \small\thepage }
+	\cfoot{ \small}
+}
+
+\titleformat{\section}
+{\raggedright\large\scshape}
+{\S}
+{.5em}
+{}
+\titlespacing*{\section}
+{0em}
+{0em}
+{.5em}
+\titleformat{\chapter}[display]
+{\centering\huge}
+{\normalfont\scshape\lsstyle \Large capítulo \thechapter}
+{0em}
+{}
+[]
+\titlespacing*{\chapter}
+{0em}
+{0em}
+{1.5em}
+
+\newcommand{\dcap}[2]{
+	 \lettrine[nindent=0em,findent=2pt,lines=3,loversize=-0.10]{\initfamily #1}{#2}
+ }
+\newcommand{\notar}[1]{\marginnote{\small\sffamily #1}[-.8em]}
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+		\Huge \pgfornament[width=.6cm,ydelta=-5.5pt]{19}\hspace{.2em} Educación para la Ciudadanía \hspace{.2em}\pgfornament[width=.6cm,ydelta=-5.5pt,symmetry=v]{19} \\
+		\textsc{\large democracia, capitalismo y estado de derecho}
+		\end{center}
+	\vfill
+		\begin{center}\LARGE\fontfamily{fbb-TLF}\selectfont
+			A nuestros {\itshape alumnos y alumnas},\\ que {\itshape siempre} nos han hecho {\itshape felices}
+		\end{center}
+	\vfill
+		\begin{center}
+		\textit{Carlos Fernandez Liria} \\ \textit{Pedro Fernandez Liria} \\ \textit{Luis Alegre Zahonero}
+		\end{center}
+	
+	\end{titlepage}
+\chapter*{\adforn{66} Prefacio a la Segunda Edición \adforn{38}}
+\begin{center}
+	\begin{minipage}{.5\linewidth}\small
+	(\emph{Nota de los autores sobre el papel de los medios de comunicación en la polémica
+		en torno a la asignatura de Educación para la Ciudadanía y este libro en particular.})
+	\end{minipage}
+\end{center}
+\dcap{S}{obre la primera} edición de este libro, se ha mentido tanto en los medios de
+comunicación españoles que conviene hacer algunas aclaraciones que dejen las
+cosas en su sitio. 
+
+El 20 de septiembre de 2007, por ejemplo, el Telenoticias 3 de Telemadrid
+anunció literalmente que nuestro libro era «uno de los que ya habían comenzado
+a utilizarse como libro de texto en la asignatura “Educación para la Ciudadanía”
+que acababa de implantarse en algunas comunidades autónomas». Con cara 
+compungida, un supuesto padre de familia, sentado en el sofá de su casa, iba leyendo
+ en voz alta algunos pasajes escogidos de nuestro libro. En especial, parecía 
+ escandalizarle el hecho de que recordáramos que los votantes del \textsc{pp} habían votado
+(y siguen votando) a un partido que apoyó la invasión estadounidense de Iraq, y
+que eso, de alguna manera, comporta algún tipo de responsabilidad. Por lo visto,
+en opinión de los directores de Telemadrid, es inconcebible que en una asignatura
+ de Educación para la Ciudadanía se pretenda nada menos que decir la verdad
+a los alumnos. Quizá piensen que sería más oportuno explicar a los jóvenes y a
+los lectores en general que los ciudadanos no tienen ninguna responsabilidad a la
+hora de votar a un partido u otro. Pues la cruda realidad es que el \textsc{pp} apoyó la 
+invasión de Iraq y que Jose María Aznar insistió una y otra vez en que tenía informes
+fidedignos de que Sadam Hussein contaba con armas de destrucción masiva,
+pese a que todos los informes de los inspectores de la \textsc{onu} decían lo contrario.
+Luego resultó que en Iraq no había armas de destrucción masiva. No sólo no las
+había, sino que siempre se supo que no las había. Sobre este tema se había mentido
+ a la opinión pública mundial. Pese a todo, a los votantes del \textsc{pp} no les 
+ pareció motivo suficiente para cambiar su elección.
+
+Se trata, sin duda, de un enigma de la vida ciudadana que ojalá algún día pueda
+ser desentrañado en los libros de texto de Educación para la Ciudadanía: ¿Cómo es
+posible que la intención de voto de la población no se haya modificado en absoluto
+al descubrir que una guerra que ha destruido un país y que ha causado centenares
+de miles de víctimas civiles se inició con un embuste de sus líderes políticos?
+Sin embargo, todo el mundo parece de acuerdo (en el \textsc{pp} y también en el \textsc{psoe})
+en que en la asignatura «Educación para la Ciudadanía» no deben tratarse este
+tipo de cuestiones tan delicadas. En realidad, tal como han demostrado los libros
+de texto que han visto la luz durante el año 2007, esta asignatura no debe consistir,
+ al parecer, más que en un canto políticamente correcto a valores abstractos y
+melifluas intenciones, una especie de Barrio Sésamo ñoño, tedioso y conformista
+para explicar a los niños lo contentos que tienen que estar por vivir en una 
+monarquía constitucional. No es extraño, por tanto, que nuestro libro fuese acogido con
+tan rabiosa indignación.
+
+Pero, antes de pasar a discutir estas cuestiones, conviene deshacer las mentiras más sonadas. El Telenoticias de Telemadrid mintió, y no era la primera vez que
+mentía al respecto. Mintió, en primer lugar, porque nuestro libro no es un libro de texto. Y, por supuesto, era absolutamente falaz que ya estuviese utilizándose como tal
+en los centros de enseñanza. Cualquiera puede ver que el libro que tiene entre sus
+manos no es un libro de texto: no responde al programa de ningún curso en particular; no tiene el formato de los libros de texto; no tiene actividades para el alumno,
+ni flechitas ni esquemitas ni recuadritos; no ha sido homologado por el Ministerio
+de Educación; no sigue el currículo de la asignatura, etc. Es más, no hay ningún
+profesor tan suicida como para buscarse la ruina utilizándolo como manual obligatorio, pues es fácil colegir que la comunidad educativa, la dirección del centro, los
+padres, los consejos escolares, la inspección, la prensa y demás fuerzas vivas, le
+complicarían mucho la vida.
+
+Que no se trata de un libro de texto es algo que sabían per fectamente en Telemadrid. Lo mismo que lo han sabido perfectamente, desde el principio, en la Cadena
+Cope, en el diario El Mundo, en La Razón, en el ABC, en Libertad Digital, en el
+Canal 7, y en todos los medios que, sin embargo, no han parado de insistir en
+que sí lo era. Sencillamente, han mentido sabiendo muy bien que estaban mintiendo. Han querido transmitir la idea de que nuestro libro no sólo es un libro de
+texto, sino que es, además, el libro de texto por antonomasia, el que verdaderamente desvela las auténticas y ocultas intenciones del gobierno del \textsc{psoe}, hasta
+el punto de que en algunos de esos medios comenzó a conocerse como el «manual de Zapatero».
+
+No sólo no es verdad que sea un manual. Se trata más bien de un antimanual
+especialmente escrito en contra de la asignatura misma. Por supuesto, este detalle ha pasado desapercibido, porque la prensa de derechas estaba muy interesa-
+da en monopolizar la oposición a la asignatura y la prensa gubernamental, muy interesada en ocultar el hecho de que, desde el principio, hubo una oposición de
+izquierdas a la Educación para la Ciudadanía. Incluso se produjo una manifestación en contra de esta asignatura, convocada a nivel estatal, que acabó con unas
+clases de Filosofía al aire libre impartidas en la Plaza de España de Madrid, el 3 de
+junio de 2005. Los tres autores del libro participamos activamente en esas movilizaciones contra la asignatura, convocadas desde la izquierda. Esta respuesta te-
+nía muy buenas razones y argumentos, pero, por supuesto, no salió en los periódicos ni en los telediarios, porque la izquierda de este país ni tiene periódicos ni
+tiene telediarios a su disposición. Y como suele ocurrir, a fuerza de silencio y censura se acabó por creer que la izquierda no existía. De este modo, se logró crear
+la ilusión de que sólo la derecha atacaba la asignatura y que, en cambio, la izquierda (liderada, al parecer, por el \textsc{psoe}) la defendía.
+
+Por supuesto, el ruido que han metido los obispos en relación con esta asignatura ha sido tan aparatoso que el espejismo estaba servido en bandeja. En este
+país tenemos la desgracia de padecer una derecha pre-civilizada, pre-moderna,
+pre-ilustrada, aliada de los sectores más reaccionarios de la Iglesia católica, una
+Iglesia a cuyos dirigentes sólo hemos visto movilizarse en contra de los derechos
+de los homosexuales, de las mujeres y, en general, en contra de todo lo que les
+suene a Derecho. Nos referimos, claro está, a la misma jerarquía eclesiástica que
+combatió en Latinoamérica a la Teología de la Liberación, y que en España está
+empeñada en «limpiar la casa del Señor», cerrando parroquias comprometidas con
+la causa de los pobres, como la de Enrique de Castro en el barrio madrileño de Vallecas. Así pues, tampoco resulta sorprendente la furiosa reacción de la Conferencia Episcopal contra cualquier propuesta que incorpore, aunque sólo sea en el título, la palabra «ciudadanía». 
+
+En esta ocasión se han comportado como auténticos
+Príncipes de las Tinieblas, como si la mera palabra «ciudadanía» les produjera el
+mismo efecto que la luz del sol al conde Drácula. La jerarquía de la Iglesia pierde
+los papeles cada vez que siente amenazada una micra de su poder político. Así
+pues, es normal que hayan reaccionado con virulencia contra una asignatura que
+pretende transmitir unos valores distintos a los que ellos inculcan en la asignatura de Religión. La hipocresía de los obispos y de organizaciones como la Confederación Católica de Padres (Concapa) al acusar al Estado de adoctrinamiento ha
+sido repugnante, cuando no surrealista, teniendo en cuenta lo contenta que estuvo la Iglesia de monopolizar el adoctrinamiento fascista, machista, homófobo y clasista durante cuarenta años de franquismo, y lo contenta que está ahora de valerse de fondos públicos para el lavado de cerebro de los niños en sus centros
+concertados y, en general, en la asignatura de Religión.
+
+Y como la derecha y la ultraderecha sí tienen medios de comunicación de sobra para hacerse oír en el espacio público, resultó aun más creíble la idea de que
+la polémica sobre la Educación para la Ciudadanía se agotaba entre el \textsc{pp}, que la
+atacaba, y el \textsc{psoe}, que la defendía.
+
+En absoluto era cierto. La oposición de izquierdas a esta asignatura había existido desde el primer momento. Partió fundamentalmente del área de Filosofía y era
+una llamada de atención sobre la degradación de la enseñanza pública en general. Era previsible, en efecto, que la asignatura de Filosofía quedara muy dañada
+con la implantación de la Educación para la Ciudadanía. Y de hecho, así ha sido.
+En el borrador del decreto de Bachillerato que el \textsc{psoe} ha preparado hasta la fecha, está previsto reducir de tres a dos horas a la semana la Filosofía de primero
+ de Bachillerato (que pasaría a llamarse «Filosofía y Ciudadanía»). Hay que tener en
+cuenta, en primer lugar, que fue ya el \textsc{psoe} quien en su momento redujo esta asignatura de cuatro a tres horas semanales. En segundo lugar, conviene recordar que
+con esta nueva reducción incumple todos los pactos y falta a todas las promesas
+hechas a las facultades y asociaciones de Filosofía. Pero no contento con esto
+(¿alguien puede adivinar qué tiene el \textsc{psoe} contra la Filosofía?), en el borrador del
+decreto se prevé reducir también a dos horas semanales la Historia de la Filosofía de segundo de Bachillerato. A ello hay que añadir el hecho de que la Ética de
+4.° de la \textsc{eso} pasa a llamarse «Ética cívica» y pierde una de sus dos horas a la semana. Todo el mundo sabe que eso es tanto como convertir esa asignatura en impracticable.
+
+La defensa de la Filosofía frente a este estropicio educativo no es una cuestión
+de corporativismo. Lo que ocurre es que algunos profesores, como los autores de
+este libro, creemos de verdad que la asignatura de «Filosofía», en su actual perfil
+científico, es el mejor instrumento del que dispone nuestro sistema educativo para
+formar ciudadanos capaces de razonar y argumentar con criterio propio e independiente. Estamos convencidos de que no hay mejor forma de encaminarse a ese
+objetivo que la enseñanza de la Filosofía y la Historia de la Filosofía, del mismo
+modo que creemos que con los programas de Educación para la Ciudadanía, lo
+que se pretende más bien es amaestrar a los niños en lo políticamente correcto y
+en las supercherías de la ideología dominante. Pero, sobre todo, somos muy conscientes de que este atentado contra el perfil científico de la asignatura de Filosofía no es más que un síntoma fatal del rumbo que está tomando la enseñanza
+pública en general. 
+
+Los perfiles científicos de las asignaturas en la enseñanza secundaria tienden cada vez más a disolverse porque el edificio mismo de la enseñanza pública se desmorona más y más, viniendo a ocupar su lugar una especie
+de «asistencia social» gestionada por educadores, pedagogos, psicólogos, e incluso por guardias de seguridad, como si se fuese muy consciente de que mientras
+las enseñanzas privada y concertada preparan para la universidad, el futuro en la
+enseñanza pública viene más bien marcado por la cárcel, el paro o el inframundo
+laboral del trabajo basura. En esta cuestión, las políticas del \textsc{psoe} y del \textsc{pp} han
+resultado igualmente letales. Legislatura tras legislatura han ido haciendo y deshaciendo leyes y decretos, como si fueran buenas intenciones, y no muchísimo
+más dinero y recursos humanos, lo que la enseñanza pública necesita para poder
+frenar esta tendencia hacia el desastre. Eso, por supuesto, sin la menor iniciativa
+legal para acabar con la ignominia de la enseñanza concertada, con su legión de
+profesores nombrados a dedo y pagados con dinero público. Si a esta situación le
+añadimos los planes a nivel europeo y mundial que desde la Organización Mundial
+del Comercio (\textsc{omc}) y el Acuerdo General de Comercio de Servicios (\textsc{gats}, por sus
+siglas en inglés) planean sobre el mundo de la enseñanza estatal, encaminados
+de forma inequívoca a la instrumentalización privada de la enseñanza pública superior y la mercantilización de la universidad, el panorama es desolador –tan desolador como había previsto hace ya tiempo el libro de Michel Éliard, La fin de l’école (París, \textsc{puf}, 2000)–. Es posible hacerse una excelente idea de lo que se ha
+estado jugando en eso que se ha llamado «Convergencia Europea en Educación
+Superior» leyendo el libro Eurouniversidad. Mito y realidad del proceso de Bolonia
+(Barcelona, Icaria, 2007).
+
+Ahora bien, en estos últimos años cruciales, la voz de la izquierda ha sido casi
+por completo silenciada, tanto respecto de la enseñanza secundaria como de la
+superior. Hartos de estrellarnos contra este muro de silencio, en el momento en
+que vimos que la implantación de la Educación para la Ciudadanía era ya un hecho consumado, los autores de este libro decidimos hacer de la necesidad, virtud.
+Nos dijimos que si querían una Educación para la Ciudadanía, la iban a tener, pero
+que la iban a tener en serio. En lugar de utilizar la asignatura para encubrir la realidad capitalista, podíamos utilizarla para denunciarla. El racismo; la xenofobia; el
+trabajo ilegal de los sin papeles y el trabajo basura de los con papeles; la desestructuración social; la precariedad laboral; la marginación y todo lo que ella conlleva; la imposibilidad de acceder a una vivienda digna y las consiguientes dificulta-
+des para la vida familiar y la procreación. Todos estos asuntos tienen su causa en
+problemas sociales y económicos enraizados en las estructuras más básicas de esta
+sociedad en la que vivimos. Es ridículo, patético e hipócrita pretender que todo
+ello hay que afrontarlo con una «educación en valores». Pero, sobre todo, se trata de una estafa que pretende encubrir y legitimar las verdaderas causas de estos
+problemas. Así pues, lo primero que debe quedar claro en una Educación para
+la Ciudadanía es el carácter capitalista de nuestra realidad social. Después habrá
+que decidir en qué consiste y qué posibilidades tiene la vida ciudadana en semejantes condiciones.
+
+Fue así como publicamos Educación para la Ciudadanía. Democracia, Capitalismo y Estado de Derecho (Akal, 2007). La reacción de los medios de comunicación
+de derechas y de ultraderecha ha sido furibunda. La tentación de utilizarnos como
+arma arrojadiza contra el \textsc{psoe} era demasiado grande para reducirnos al silencio,
+así que decidieron más bien poner el grito en el cielo. La campaña mediática que se
+ha desatado en contra de nuestro libro durante los meses de agosto y de septiembre de 2007 ha superado los límites de la falsedad, la mentira y la hipocresía. En
+primer lugar, como ya hemos señalado, presentaron el libro como un manual destinado a las aulas, cuando era absolutamente obvio que no lo era. Luego, y tal como
+denunció en su momento Javier Ortiz, siguieron la táctica habitual de la Inquisición:
+«Primero se dice que el contrario ha dicho lo que no ha dicho y luego se le condena
+sin apelación posible por haber dicho lo que no ha dicho» (El Mundo, 9 de septiembre de 2007).
+
+Así, por ejemplo, en las múltiples veces que nuestro libro ha sido aludido en Telemadrid, su contenido ha quedado resumido diciendo que definimos «libertad»
+       como «hacer lo que a uno le da la gana». Varias veces esa frase ha aparecido subrayada y ampliada en pantalla, como prueba de nuestra ignominia. Lo que no de-
+cían es que esa frase es sólo el punto de partida de un razonamiento estrictamente kantiano en el que acabamos, por cierto, por concluir que «libertad» es más bien
+«obedecer a la ley» (lo que, sin duda, considerarán muy desconcertante los directores de Telemadrid, tratándose de un libro que han calificado poco menos que de an-
+ticonstitucional). Hasta el menos aventajado de los alumnos de secundaria que de
+verdad leyera nuestro libro entendería perfectamente que nuestro concepto de libertad no tiene nada que ver con lo que ordinariamente se entiende por «hacer lo
+que nos da la gana». Es completamente obvio que si tomamos esa frase como punto de partida, es precisamente porque sabemos que se trata de una idea bastante
+común entre los jóvenes, de modo que es con ella con la que conviene ajustar cuentas. Por supuesto, esto lo sabían perfectamente en Telemadrid, pero no les importó mentir al respecto.
+
+Es curioso cómo los periodistas acaban creyéndose sus propias mentiras, porque el caso es que en el programa 59”, de \textsc{tve}, también resumieron la tesis principal del libro del mismo modo. Luego pasaron a rasgarse las vestiduras, hasta el
+punto de que Melchor Miralles, directivo del diario El Mundo, pidió que a los autores nos inhabilitaran de por vida para la docencia (en todo caso, en descargo del
+director de 59”, hay que señalar que accedió a leer una nota de rectificación en el
+programa siguiente; por supuesto, no se puede decir lo mismo de Melchor Miralles).
+Se han publicado otras mentiras absolutamente descabelladas, como, por ejemplo, que mostramos algún tipo de menosprecio hacia los gitanos (Alfonso Ussía,
+La Razón, 19 de agosto de 2007) cuando, en realidad, son mencionados precisamente como modelo de resistencia frente a los mecanismos destructores de la familia que pone en juego el capitalismo (que constituye, éste sí, el blanco de nuestras críticas); mentiras absurdas, como que consideramos intolerable mantener la
+virginidad hasta el matrimonio, cuando lo único que decimos a ese respecto es
+que se trata de un asunto que debe quedar gobernado por la voluntad libre de cada
+uno; o mentiras delirantes, como que defendemos que la «dignidad» es comportarse como «un buen cerdo machista y tenerlos bien puestos» (La Razón, 17 de agosto de 2007), cuando, como es obvio, eso se propone precisamente como ejemplo
+de indignidad.
+
+Lo más llamativo es que se hayan apuntado, por una parte, mentiras y, por otra,
+insultos y descalificaciones, sin aportar ni un solo argumento. Fernando Savater
+nos llamó «necios y sectarios» (\textsc{abc}, 7 de agosto de 2007); Delgado Gal nos consideró «ineptos, fanáticos y paranoicos», al tiempo que se lamentaba de que fuéramos («¡ay!») profesores (\textsc{abc}, 5 de agosto de 2007); Martín Prieto nos tildó de
+«retroprogres», «locos», «chequistas» y «lamelibranquios» (El Mundo, 12 de agosto
+de 2007); César Vidal nos llamó «escritores fracasados» y no sé cuántas cosas
+más (\textsc{cope}, 12 de julio de 2007); Alfonso Ussía dijo que éramos unos «stalinistas»,
+«comunistas», «genocidas» y nos invitó a irnos a vivir a Cuba (La Razón, 19 de agosto de 2007); Jiménez Losantos y Pedro J. Ramírez han hablado bastante de nuestro libro no sabiendo si llorar o reír y llegando a la conclusión de que, más que nada,
+somos unos «zumbaos».
+
+Respecto a los insultos publicados en El Mundo y en La Razón hay que añadir,
+además, que han sido especialmente cobardes y maleducados, porque estos diarios (al contrario que El País o \textsc{abc}) no nos han concedido derecho a réplica, ni si-
+quiera las quince líneas de rigor en «Cartas al director». Tres cartas enviadas a Pedro J. Ramírez fueron rechazadas sin explicaciones.
+
+Es muy notable el hecho de que sólo haya dos personas que hayan argumentado sobre el libro: Rafael Sánchez Ferlosio (El País, 29 de julio de 2007) y Gustavo
+Bueno (El Catoblepas). El primero lo hizo tras criticar durísimamente a Savater y
+para defender, en cambio, la idea fundamental de nuestro libro, lo que no tiene
+nada de extraño, pues, en efecto, «la idea de introducir en política la fuerza de lo
+impersonal» nos la enseñó él mejor que ningún otro. El segundo, es cierto, nos criticó con dureza, aunque con argumentos muy discutibles; pero, en todo caso, lo
+hizo tras burlarse de forma inmisericorde de los otros «libros de texto», y especialmente del de José Antonio Marina, del que vino a decir algo así como que si es
+más tonto no nace. 
+
+Así pues, después de todo, salimos ganando por comparación.
+Merecen comentario aparte los insultos que han cuestionado nuestra salud
+mental («zumbaos», «paranoicos», «casos psiquiátricos», etc.). Por lo visto, a la izquierda del \textsc{psoe} y del \textsc{pp} estamos todos locos de remate. Pues, en efecto, los
+periodistas que tanto se han burlado de nosotros se asombrarían mucho al saber
+la acogida tan entusiasta que nuestro libro ha tenido en los medios de la izquierda alterglobalización (en las revistas El Viejo Topo, Viento Sur, Archipiélago, Fusión, El Otro País o en los sitios web habituales de la izquierda). 
+
+Es una prueba
+más de que los argumentos de izquierda no tienen ninguna cabida mediática en el
+espacio público de nuestra bendita libertad de expresión. No hace falta censura,
+en efecto, allí donde todo el mundo obedece, por la cuenta que le trae, la voz de
+su amo. Sin embargo, en esta ocasión se ha colado en los grandes medios de comunicación un argumento de la llamada «extrema izquierda». Ello se ha debido,
+como sabemos, a que al \textsc{pp} le convenía muchísimo, en su guerra particular contra la asignatura de Educación para la Ciudadanía propuesta por el \textsc{psoe}, presentar nuestro libro como el «manual de Zapatero». Es la única razón, pues el blindaje
+informativo contra los argumentos a la izquierda del \textsc{psoe} ha sido siempre absoluto. Y mira por dónde, una vez que, debido a este accidente informativo, se encuentran con una argumentación anticapitalista y alterglobalización encima de la mesa
+de los telediarios y los periódicos, se quedan boquiabiertos y piensan que, sencillamente, se les han colado unos locos de atar. 
+
+Así de acostumbrados están a discutir con nuestros argumentos y así de acostumbrados están a discutir con nues-
+tros autores habituales de referencia, tales como Noam Chomsky, Vandana Shiva,
+        Tariq Ali, Samir Amin, Eduardo Galeano, Ammy Goodman, Pérez Esquivel, Naomi
+Klein, Immanuel Wallerstein, Terry Eagleton, Eric Hobsbawm, Michel Chossudovsky,
+Harold Pinter o Arundhati Roy. Hay un largo etcétera de autores censurados por los
+propietarios privados del espacio público. Por ejemplo, y sin ir más lejos, Ignacio
+Ramonet dejó al descubierto la complicidad de los medios europeos con el golpe
+de Estado contra el orden constitucional en Venezuela de abril del 2002, y ese fue
+el último artículo que publicó en El País. En suma, es de suponer que nuestros medios de comunicación no tendrían demasiado empacho en psiquiatrizar al movimiento alterglobalización en su conjunto, con todos sus autores de referencia y
+toda su bibliografía. Como si a la izquierda de los que tienen el poder no existiese más que el manicomio.
+
+Al fin y al cabo, se trata de un buen síntoma. No podemos esperar que los que
+tienen la sartén por el mango aprecien la corrección de los diagnósticos de la izquierda alterglobalización. Si defendemos que «otro mundo es posible» es porque
+sabemos que otra economía y otras relaciones sociales son posibles en este mundo. Los anticapitalistas no pedimos la luna, no somos unos lunáticos. Pedimos
+algo de lo más sensato, aunque no podemos esperar la comprensión de los poderosos ni de sus mercenarios en los medios de comunicación.
+Se pongan como se pongan, el movimiento alterglobalización existe. Tampoco
+los propietarios de Atenas fueron demasiado comprensivos con Sócrates que es,
+después de todo, el verdadero protagonista de este libro.
+
+\chapter*{\adforn{66} Introducción \adforn{38}}
+
+\begin{center}
+	\begin{minipage}{.5\linewidth}\itshape
+	Se dice que una aguda y graciosa esclava tracia
+	se rió de Tales porque, mientras observaba las estrellas
+	y miraba hacia arriba, se cayó en un pozo.
+\begin{flushright}\upshape
+		Platón, Teeteto 174a
+\end{flushright}
+	\end{minipage}
+\end{center}
+
+\dcap{S}{e suele considerar}que con esta anécdota comienza la
+historia de la filosofía. Tales de Mileto era uno de los sabios más
+importantes de Grecia, era una de las siete
+personas más admiradas por su sabiduría. Algunas otras
+anécdotas que han llegado hasta nosotros nos lo presentan
+como un gran benefactor de su ciudad, porque, en efecto,
+su sabiduría había ayudado mucho en los asuntos políticos
+y sociales.
+
+Así, por ejemplo, Tales había ayudado al ejército a vadear
+un río sin moverse del sitio. Hizo que se construyera
+una presa río arriba, desvió el cauce del agua y lo situó a
+espaldas de los soldados, que gracias a ello pudieron
+vencer en la batalla.
+
+En otra ocasión, Tales había previsto un eclipse. Esto
+demostraba un gran conocimiento de los cielos, algo que
+resulta de lo más útil para orientarse en el mar. Otras
+anécdotas nos hablan de lo útiles que resultaban sus
+conocimientos para sus conciudadanos, quienes por eso le
+admiraban y respetaban.
+
+%\notar{El pozo de Tales y la filosofía} 
+Pero un día Tales se cayó en un pozo porque iba muy
+distraído, concentrado en sus pensamientos. Y entonces
+se corrió la voz de que Tales ya no sabía ni dónde ponía los
+pies. De hecho, algunos de sus conciudadanos ya hacía
+tiempo que desconfiaban de él. Le acusaban de que
+cada vez estaba más interesado en saber cosas a las que
+no se veía ninguna utilidad. Tales de Mileto contestaba
+que la cuestión no era si eran útiles o no, sino si eran o no
+verdad. Si era o no verdad, por ejemplo, que el agua era el
+principio de todo, de lo que todo había comenzado y de lo
+que todo estaba, en el fondo, compuesto. Estas cosas no
+parecían tener ningún interés para la ciudad y no se
+entendía por qué Tales perdía tanto tiempo en intentar
+dilucidarlas. Según él, lo importante no era saber cosas
+útiles para la vida ciudadana, sino, sencillamente, saber,
+saber por saber, por amor al saber. Por eso, comenzaron a
+llamarle «filósofo», que en griego quiere decir «amante del
+saber».
+
+%\notar{La reacción de la ciudad}
+Le llamaban así sin duda que con cierta sorna y, algunos,
+con cierto desprecio y en tono de reproche, porque lo
+único que veían es que la «filosofía» apartaba a Tales de los
+asuntos útiles para la ciudad, que cada vez podía
+beneficiarse menos de su sabiduría. Algunos le
+consideraban ya un viejo chiflado incapaz no solamente
+de encaminar los pasos de la ciudad, sino incluso de
+encaminar sus propios pasos sin caerse en algún pozo.
+
+Tales decidió entonces dar un escarmiento a sus
+conciudadanos de Mileto. Dedujo con acierto que la
+cosecha de aceitunas de ese año sería mucho más
+abundante de lo habitual y, sin decírselo a nadie, fue
+comprando todas las prensas para fabricar aceite. Llegó
+un momento en que todo el mundo tenía toneladas de
+aceitunas, pero no podían hacer nada con ellas porque
+todas las prensas estaban en manos de Tales, quien
+aprovechó para alquilarlas a precio de oro. 
+
+Así demostró a
+sus conciudadanos que si él se ocupaba de la filosofía y
+no de «cosas útiles» no era porque hubiera perdido la
+cabeza, sino porque había descubierto algo mucho más
+importante que la utilidad, algo mucho más importante
+que ganar batallas o que cubrirse de oro. Estaba
+convencido de que era algo destinado a cambiar
+enteramente la vida de esa ciudad y de todas las
+ciudades del mundo.
+
+%\notar{La aventura de la Ciudadanía} Y tenía razón. Al caerse en ese pozo, Tales había
+desatado una fuerza portentosa que en adelante no
+dejaría de agitar la historia occidental. Se trataba de la idea
+de que la vida de la ciudad tuviera su centro de gravedad
+en torno a la verdad, la dignidad y la justicia. Se trataba de
+que, en adelante, la ciudadanía no se conformara con ganar
+batallas y perseguir con éxito sus intereses. Que nada
+resultase a la ciudad suficientemente bueno si no era,
+además de útil o conveniente, justo y verdadero.
+
+Para muchos, esto era una tontería. Pero lo cierto es que
+la humanidad acababa de iniciarse en una aventura que
+llega hasta nuestros días y sobre la que todavía no se ha
+dicho la última palabra.
+
+\chapter{\adforn{66} La Aventura de la Ciudadanía \adforn{38}}
+
+\section{el enigma de sócrates}
+
+\dcap{e}{ntre todos los proyectos}que ha emprendido el ser
+humano, la aventura de la ciudadanía ha sido la más
+%\notar{La condena de sócrates}
+arriesgada y la más sorprendente. Quizá esto pueda sonar
+a exageración, teniendo en cuenta las cosas tan raras que
+el hombre se ha empeñado en hacer a lo largo de la historia, Sócrates
+de viajar a la Luna a obsesionarse en ganar guerras
+mundiales. Es verdad que, a primera vista, no hay nada que
+parezca excepcional en el hecho de que seamos ciudadanos.
+Se trata, simplemente, de que en tanto que ciudadanos de,
+por ejemplo, el Estado español, tenemos determinados
+derechos y deberes, y podemos votar cada cierto tiempo a
+quien nos va a gobernar. Nada de esto es sorprendente, es
+más bien lo más normal del mundo, es nuestra vida más
+cotidiana.
+
+Sin embargo, toda nuestra existencia ciudadana está
+levantada sobre un misterio. Podemos hacernos una idea
+del enigma si nos fijamos en cómo comenzó, para el ser
+humano, la historia de esta aventura de la ciudadanía.
+La historia de la filosofía había comenzado ya con un
+tropiezo, con la caída de Tales de Mileto. La aventura de la
+ciudadanía comenzó, también, con un tropiezo, pero esta vez
+de la humanidad entera: por algún motivo, una democracia,
+la democracia ateniense, consideró necesario condenar a
+muerte a un ciudadano de setenta años, llamado Sócrates,
+cuyo único delito había sido ir todo el rato por ahí preguntando
+a la gente qué era un zapato. Es cierto que Sócrates también
+preguntaba, por ejemplo, qué es la virtud, pero eso es lo de
+menos. Lo importante es que lo único que hacía era preguntar.
+
+Sócrates, en efecto, no enseñaba nada en especial, porque,
+tal y como él solía decir, lo único que sabía era que no sabía
+nada. O sea, que nada podía enseñar. Pero, eso sí, no
+paraba de preguntar qué es un zapato, qué es la virtud, y
+cosas así.
+
+%\notar{Sócrates y nosotros}
+
+Pues bien, es con este enigma con el que comenzó para
+la humanidad la aventura de la ciudadanía. Con este
+enigma y con esta ignominia: la condena a muerte de un
+anciano que no había hecho más que preguntar. Si Atenas
+hubiera sido una dictadura, si la muerte de Sócrates se
+hubiera debido al capricho de un tirano, la cosa no tendría
+nada de sorprendente. Lo extraño es que Atenas era una
+democracia y, además, es el modelo de referencia de lo que
+solemos entender por democracia. ¿Condenaríamos
+nosotros a muerte a un viejo que anduviera por ahí
+preguntando qué es un zapato? La pena de muerte, se dirá,
+ni siquiera está reconocida en nuestra Constitución. Ahora
+bien, tenemos motivos para pensar ---como vamos a intentar
+hacer ver en este libro--- que si ese viejo preguntara de la
+misma manera y con la misma insistencia que Sócrates,
+nuestra saludable democracia encontraría alguna manera de
+condenarle a muerte, aunque para ello tuviera que hacer
+una reforma constitucional o incluso que sacrificar la
+Constitución. El siglo \textsc{xx} nos ha dejado algunos ejemplos que
+vendrían al caso (y que más adelante tendremos ocasión de
+comentar con detenimiento).
+
+¿Qué tenía de especial la forma de preguntar de
+Sócrates? ¿Por qué resultó insoportable para la democracia
+ateniense?
+
+\section{un espacio vacío}
+
+El rey ciro, rey de los persas (que eran los más grandes
+enemigos de los griegos), se refirió una vez a los
+%\notar{Ciro, el rey de los persas}
+atenienses diciendo con desprecio: «Ningún miedo tengo de
+esos hombres que tienen por costumbre dejar en el centro
+de sus ciudades un espacio vacío al que acuden todos los
+días para intentar engañarse unos a otros bajo juramento».
+
+%\notar{La asamblea y el mercado}
+Estas palabras son, en realidad, una preciosa definición de
+la democracia. Poco sospechaba el rey Ciro de la inmensa
+potencia que se escondía en ese espacio vacío, gracias al
+cual los griegos no sólo ganarían dos guerras contra los
+persas, sino que se convertirían en un modelo político para
+toda la historia de la humanidad. Ese espacio era la plaza
+pública, en la que se asentaban dos realidades de potencia
+incalculable: la asamblea, lo que nosotros llamaríamos el
+Parlamento, y el mercado, del que no hablaremos todavía,
+aunque tendrá gran importancia en próximos capítulos. En
+los dos sitios, la asamblea y el mercado, los hombres
+intentaban engañarse bajo juramento y, en verdad, no han
+dejado de hacerlo hasta nuestros días. 
+
+Pero en la
+asamblea, al intentar engañarse, tienen que argumentar y
+contraargumentar, tienen que dialogar, y de este diálogo van
+surgiendo consensos y de los consensos, leyes. Los
+griegos eran «ciudadanos» en la medida en que pisaban ese
+espacio vacío en el centro de sus ciudades. Era el espacio
+al que, en adelante, llamaremos el espacio de la
+ciudadanía.
+
+%\notar{El espacio vacío de la ciudadanía}
+Es muy importante que ese espacio esté, como subrayaba
+con asombro el rey Ciro, vacío. Que esté vacío supone,
+por ejemplo, que no está ocupado por un Templo o por un
+Trono. He aquí lo que tiene de atrevido el proyecto de la
+democracia que hemos heredado de Grecia: poner en el
+centro de la ciudad un espacio vacío es como pretender que
+toda la vida ciudadana, todo aquello sobre lo que bascula el
+tejido social, gire en torno a un lugar en el que no hay
+dioses ni reyes: ni tiranos terrestres ni déspotas celestes.
+Se trata de preservar así, en el centro mismo desde el que
+emana la más alta autoridad de la vida social, un lugar sin
+amos ni siervos. 
+
+Eso no quiere decir que en otras partes del
+tejido social, incrustados en otros barrios más o menos
+periféricos de la ciudad, no pueda haber lugar para la vida
+religiosa o para determinados tipos de servidumbre. La
+gente puede decidir ir a rezar a los templos, puede aceptar
+una vida familiar en la que, por ejemplo, los hijos deban
+obedecer a sus padres, puede aceptar un contrato basura
+en una empresa o incluso aceptar ser cabo de la guardia
+civil y obedecer las órdenes de un capitán. Pero sólo si así
+lo decide, pues el lugar de la última y más legítima autoridad
+seguirá estando en otra parte. Y lo importante y lo
+sorprendente, lo que de inquietante tiene la democracia, es
+que el centro mismo de la ciudad, el lugar en el que reside
+la autoridad última de la vida social, es un lugar vacío, un
+lugar vacío que pueda ser visitado por cualquiera, un lugar al
+que se acude para dialogar, para argumentar y
+contraargumentar, incluso, ¿por qué no?, para intentar, como
+decía el rey Ciro, engañar a los demás bajo juramento.
+
+%\notar{Lo privado y lo público}
+Así pues, los hombres pueden ser padres o hijos, amos o
+siervos, empleados o patrones, varones o mujeres,
+subordinados o jefes, fieles de un dios o miembros de una
+casta sacerdotal que pretende hablar en su nombre. Pero, en
+la medida en que penetren en ese espacio vacío del que
+hablamos, se convierten en ciudadanos. Y en ese sentido y
+en ese lugar, son todos iguales. Se dirá que esto es un
+cuento chino. Ya veremos luego si lo es o no. Pero primero
+hay que entender lo que se quiere decir con ello. En ese
+«espacio vacío» todos son iguales para hacer lo que se hace
+en ese espacio vacío, es decir, para hablar, para dialogar, para
+argumentar. Claro que esa gente seguirá siendo distinta y
+desigual a la hora de rezar, de trabajar, de obedecer, de
+comer, de tener hijos, etc. Pero porque esas cosas no se
+hacen en ese centro de la ciudad del que estamos hablando,
+sino en lo que podríamos considerar los «barrios de la vida
+privada». 
+
+Eso sí, si la ciudad de la que estamos hablando es
+una ciudad verdaderamente democrática, será porque ha
+adquirido el compromiso de hacer gravitar toda la vida
+ciudadana según lo que se decida en ese lugar vacío en el
+que todos son ciudadanos y, por consiguiente, iguales. Por
+tanto, eso quiere decir que el rezar, el trabajar, el obedecer, el
+comer, el tener hijos y todas esas cosas se harán según las
+normas y leyes que se vayan decidiendo desde el espacio
+«vacío» de la ciudadanía. Eso quiere decir también que, en
+algún sentido, en algún sentido muy importante, los hombres
+y las mujeres, los padres y los hijos, los obreros y los
+patrones, los fieles y los sacerdotes, son prioritariamente, por
+encima de todas esas cosas, ciudadanos. Alguien puede ser
+un obrero, pero antes de ser un obrero, es ya un ciudadano. Y
+lo sigue siendo siempre de manera fundamental. 
+
+Por supuesto eso no quita para que uno deba comer de su trabajo y no de
+su condición de ciudadano. Pero las leyes que decidan cómo
+se ha de trabajar para comer vendrán decididas, si se trata de
+una democracia, desde el espacio de la ciudadanía y no
+desde, por ejemplo, una reunión de empresarios. (Repárese
+bien en que aquí estamos hablando en condicional: así tendría
+que ser «si se tratara de una verdadera democracia»; tiempo
+habrá luego de comprobar qué queda de ello en la cruda
+realidad.)
+
+\section{el lugar de cualquier otro}
+
+%\notar{Sócrates y Pericles}
+
+Los atenienses estaban tan orgullosos de su democracia
+como lo estamos nosotros. Es muy famoso el discurso de
+Pericles, en el que este gran estadista explica cómo el poder
+que Atenas ha demostrado esconde su secreto en ese
+espacio vacío que tan insensatamente despreciaba el rey
+Ciro. Los griegos –entre ellos, sin duda, los que juzgaron y
+condenaron a Sócrates– tenían mucho aprecio por este
+discurso. Se trata de un precioso canto de alabanza a la
+democracia que todavía suele citarse con admiración. Ahora
+bien, a Sócrates ese discurso le inspiraba un verdadero
+desprecio. Le parecía, no cabe duda, absolutamente
+insuficiente. Tan insuficiente como esa vida ciudadana
+de la que los griegos estaban, en su opinión, tan
+injustificadamente orgullosos.
+
+ ¿Estaba, entonces, Sócrates
+de acuerdo con el rey Ciro en despreciar ese espacio vacío,
+esa plaza pública, esa especie de agujero que se abría en el
+centro de las ciudades y los estados griegos? Evidentemente
+no. Sócrates despreciaba la ciudadanía ateniense porque le
+parecía insuficientemente ciudadana; Ciro lo hacía por lo que
+tenía, precisamente, de ciudadanía. Ciro no entendía que en
+el centro de la ciudad no colocaran un altar o un trono, un
+templo o un palacio. Sócrates, por el contrario, lo que
+observaba es que, aunque no lo pareciera, ese lugar vacío
+estaba, todavía, siempre demasiado lleno. Sócrates lo veía,
+en realidad, atiborrado de diosecillos, de idolillos y
+reyezuelos, de pequeños déspotas celestes y terrestres, de
+todo un tejido de servidumbres insensibles que acababan
+por constituir la más imponente de las tiranías.
+
+%\notar{Nadie, cualquiera o todos}
+Para que ese lugar hubiera estado, a gusto de Sócrates,
+suficientemente vacío, tendría que haber sido,
+realmente, algo a lo que vamos a llamar «el lugar de
+cualquier otro». También podemos llamarlo «Razón» o,
+también, «Libertad». Lo importante no es ponerle nombre,
+sino entender en qué consiste que el lugar de los
+ciudadanos esté vacío. Sólo si está vacío puede ser
+ocupado por cualquiera.
+
+ Y sólo en ese sentido puede ser el
+lugar de todos, a fuerza, precisamente, de no ser el lugar
+de nadie, a fuerza de que nadie pueda apropiarse de ese
+lugar y decir que es un dios, o un representante de dios, o
+un rey o un príncipe con más derecho a estar ahí que los
+demás. Un lugar de todos y de nadie, un lugar vacío que
+cualquiera puede llenar, sin que por eso deje de estar
+vacío. Se trata de una aparente paradoja que no es sólo
+aparente: es en realidad, como vamos a ver, mucho más
+enigmática y profunda de lo que parece a simple vista.
+Tanto que todo la historia de la filosofía, al menos en una
+de sus columnas vertebrales, la que llamamos Ilustración,
+ha consistido en profundizar en este enigma político.
+
+%\notar{Ni tronos ni templos}
+
+Así pues, los ciudadanos tienen que ser capaces de
+habitar el espacio de la ciudadanía sin llenarlo, sin
+suplantarlo, sin convertirlo en otra cosa, en, por ejemplo, un
+palacio o un templo. Se dirá que es imposible estar en un
+lugar y que ese lugar, al mismo tiempo, permanezca vacío.
+Se dirá que lo máximo que pueden pedir los ciudadanos en
+el lugar de la ciudadanía es que cada uno pueda ir ahí con
+su templo y su trono preferido, de tal modo que en el lugar
+de la ciudadanía lo que encontremos sea una multitud de
+religiones y de despotismos tolerándose entre sí. Ahora
+bien, eso es un absurdo. 
+
+De ese modo sólo se lograría que
+uno de los templos o uno de los tronos, el que más fuerza
+acabara por tener, terminara por dominar a los otros. Y
+entonces, lo que tendríamos en el centro de la ciudad sería
+eso, un trono o un templo, y no un espacio vacío. Es decir,
+que lo que tendríamos sería, precisamente, la ausencia de
+ciudadanía y no una «ciudadanía más realista». Incluso si
+eso es lo que siempre acaba por suceder, porque así son
+las cosas, que el pez grande se come al chico y, así, un
+trono o un templo acaba siempre por apropiarse del lugar de
+la ciudadanía, predominando siempre sobre los demás
+tronos y sobre los demás templos, sería absurdo que nos
+empeñáramos en decir que eso es la ciudadanía en realidad,
+en lugar de diagnosticar, más bien, que en esa realidad la
+ciudadanía brilla por su ausencia. 
+
+Por el contrario, si de lo
+que se trata es de que los distintos tronos y los distintos
+templos tengan que tolerarse entre sí, de que tengan la
+obligación de aguantarse y respetarse unos a otros,
+entonces es preciso que haya algún tipo de instancia, algún
+tipo de autoridad desde la que se dicte esa obligación, esa
+norma, esa ley. Tiene, pues, que haber un lugar vacío desde
+el cual se diga, se obligue, se legisle lo que los tronos y los
+templos deben cumplir.
+
+%\notar{Razón y Libertad}
+Volvemos, por tanto, a plantearnos perplejos la pregunta: ¿Cómo podrían los ciudadanos ocupar el lugar de la
+ciudadanía sin llenarlo? ¿Qué tiene de especial ese lugar
+que Sócrates se empeñó en defender, ese lugar que
+puede llenarse de ciudadanos sin dejar de estar vacío?
+¿Cuál puede ser ese lugar sobre el que habría, por tanto,
+que levantar la asamblea, el parlamento, el edificio de la
+ley, la ciudad? ¿Lo llamaremos «Razón», «Libertad», «lugar
+de cualquier otro»?
+
+%\notar{El abismo \\de la democracia}
+
+Antes nos preguntábamos por el misterio de que una
+democracia se sintiera incapaz de aguantar a un viejo
+como Sócrates, que lo único que había hecho era preguntar
+qué es un zapato. Quizás ahora puede empezar a
+vislumbrarse el secreto de lo que pasó. El problema estaba
+en que Sócrates se empeñaba en preguntar desde ese lugar
+del que estamos hablando ahora. Un lugar tan vacío que,
+comparado con él, el lugar vacío del que tanto se asombraba
+Ciro, estaba lleno a rebosar. Y lo que ocurrió fue que, en
+efecto, la presencia de Sócrates por las calles de la ciudad
+era como si fuese abriendo un agujero, un pozo, en el que la
+ciudad entera amenazaba con precipitarse, como si se
+tratase de un abismo. 
+
+Ahora bien, ese abismo era ni más ni
+menos que la democracia misma: la fuerza de la democracia,
+que exigía a la vida entera de la ciudad caminar hacia otro
+sitio de donde estaba caminando. Era, quizá, el mismo pozo
+en el que tiempo atrás se había caído Tales, y era como si
+Sócrates se empeñara ahora en que fuera la ciudad entera la
+que cayera con él. Como si recordara a los ciudadanos que,
+si verdaderamente lo eran, las cosas no podían seguir igual.
+Era la voz que recordaba la potencia que se encerraba en ese
+espacio vacío que Grecia había inventado para la historia de
+la humanidad. 
+%\notar{Apariencia y realidad de la democracia}
+Sus conciudadanos encontraron el medio de
+acallarle a él, condenándole a muerte, y de acallar también
+las propias exigencias de la ciudadanía y de la democracia,
+suplantando a éstas por una apariencia de ciudadanía y una
+apariencia de democracia. Es obvio que en este dilema nos
+encontramos aún, veinticinco siglos después. ¿A qué
+estamos llamando democracia nosotros, todos los días, en
+nuestros telediarios, en nuestros periódicos, en nuestras
+cabezas?
+
+%\notar{Preguntas y paradojas}
+¿Cómo haremos para distinguir la democracia de la
+apariencia de democracia? Empecemos por intentar
+comprender en qué consiste ese nuevo vacío que Sócrates
+abrió en aquel vacío ateniense que tanto asombrara a Ciro.
+Intentemos comprender eso que hemos dicho: que se trata
+de un lugar que los ciudadanos pueden ocupar sin llenarlo,
+o, al menos, sin llenarlo de otra cosa que de su propia
+ciudadanía. Pero como aún no sabemos lo que es la
+ciudadanía, con esto no hemos dicho nada de nada. A ese
+lugar lo hemos llamado (así se lo ha llamado a lo largo de
+la historia de la filosofía) «Razón» y «Libertad». A ver qué
+significa eso. Puede que parezca que estamos acumulando
+paradojas y que todo esto no es más que uno de esos
+trucos verbales a los que tan propensos parecen los
+filósofos. Sin embargo, el «lugar vacío» del que estamos
+hablando no es un invento de los filósofos. Por el contrario,
+es un lugar que hemos visitado y experimentado
+probablemente muchas más veces de lo que creemos.
+Quizá no nos hayamos percatado siempre –o quizá nunca–
+de lo que ciertas experiencias tenían de paradójicas y
+asombrosas, pero ahora es el momento de reflexionar
+sobre ello.
+
+\chapter{\adforn{66} Razón y Libertad: el Lugar de Cualquier Otro \adforn{38}}
+
+\section{la razón y las matemáticas}
+%\notar{El misterio \\de las matemáticas}
+\dcap{E}{n clase de matemáticas,}por ejemplo, los estudiantes
+se enfrentan a diario a un fenómeno asombroso
+e inexplicable, aunque no se den cuenta de ello. Lo que
+ocurre todo el rato en clase de matemáticas es mucho
+más sorprendente que los milagros de la religión,
+los fenómenos paranormales o el hecho de que ser piscis
+o libra pueda determinar nuestro destino de la semana.
+Puede que nunca hayamos reparado en ello, pero es
+fácil caer en la cuenta de que la clase de matemáticas
+se sostiene sobre una paradoja esencial. En ella vemos
+a un profesor hablando y hablando, mientras traza
+garabatos sobre una pizarra. De pronto, el profesor
+apunta al pie de la pizarra algo así como «tal y tal\ldots~ que
+es lo que queríamos demostrar». «El cuadrado de la
+hipotenusa», tal y como queríamos demostrar, «es igual
+a la suma del cuadrado de los catetos.» He aquí un
+teorema, el famoso teorema de Pitágoras, demostrado
+cuidadosamente en la pizarra por un profesor. Algún
+alumno podría entonces intervenir diciendo «¡bueno, eso
+lo dirá usted!». Lo importante es reparar en que el
+profesor no debería responder algo así como que él tiene
+más autoridad y que, por tanto, hay que hacerle caso
+respecto de ese asunto del cuadrado de la hipotenusa.
+Lo importante es reparar en el hecho de que la respuesta
+conveniente sería algo del tipo: «¿Pero cómo? ¿Es que
+usted no se ha dado cuenta de que estamos en clase
+de matemáticas? ¡Yo no he dicho ni digo aquí nada de
+nada!».
+
+«¡Pero si lleva toda la clase hablando, todos lo hemos
+visto!», podría replicar el alumno. «Se equivoca caballero»,
+haría bien en responder el profesor, «yo he movido los labios
+y he pronunciado sonidos, pero no soy yo quien ha dicho
+que el cuadrado de la hipotenusa es la suma del cuadrado
+de los catetos. Eso no lo he dicho, lo he demostrado. Y eso
+es tanto como decir que eso se ha dicho a sí mismo. O si
+se quiere, que es imposible decir otra cosa sobre el
+cuadrado de la hipotenusa. Y que, por tanto, si yo fuera otro,
+habría dicho lo mismo: que «el cuadrado de la hipotenusa es
+la suma del cuadrado de los catetos».
+
+—Eso no es más que su opinión. ¿O es que pretende usted
+tener la verdad en sus manos?
+
+—No, no es mi opinión. Lo que es mi opinión, en todo caso,
+es que esta demostración que hay escrita en la pizarra está
+bien hecha y que, por tanto, esto es verdadero
+independientemente de que yo tenga ganas o
+no, independientemente de mis pareceres y también de mis
+opiniones. Puede que alguien demuestre un día que esa
+demostración no está bien hecha, y entonces resultará que
+esto era, en realidad, falso. Pero, en ese caso, será falso,
+también, independientemente de mis ganas, de mis
+pareceres y de mis opiniones. En todo caso, lo que hay
+escrito aquí en la pizarra no es para nada relativo a mí. No
+tiene nada que ver conmigo. Es, hasta donde yo sé,
+eternamente verdadero (independientemente de mis
+opiniones) o, quizá, es eternamente falso (pero entonces
+también independientemente de mis opiniones). Por eso
+digo que yo no he dicho nada aquí, que esto se ha dicho a
+sí mismo. Eso es lo que quieren decir, en verdad, las
+palabras demostración o deducción. Una demostración es
+algo que decimos por coherencia con lo que hemos dicho
+antes, de tal modo que podemos afirmar que lo que
+decimos se sigue por sí solo de lo dicho anteriormente.
+Esto es a lo que llamamos razonar.
+
+—Según eso, cuando razonamos no estaríamos razonando
+nosotros, usted o yo o fulano de tal\ldots~ estaría razonando\ldots~
+nadie\ldots~
+%\notar{Un decir que «se dice a sí mismo»}
+
+—Si lo quiere decir así\ldots~ Cuando nos esforzamos por
+razonar es obvio que somos nosotros los que nos
+esforzamos. Pero ¿en qué nos esforzamos? Lo curioso es
+que nos esforzamos en decir algo que podría decir cualquier
+otro, o mejor, que incluso tendría que decir cualquier otro si
+quisiera ser coherente. O sea, si lo quiere decir así, se trata
+de que nosotros, usted o yo o fulano de tal, cuando
+razonamos, nos esforzamos mucho en decir cosas que no
+dependan de que seamos nosotros quienes las estemos
+diciendo. Nos esforzamos mucho y somos, desde luego,
+nosotros los que nos esforzamos\ldots~ en no ser nosotros. Es
+por eso por lo que cuando he puesto en la pizarra eso de
+«como queríamos demostrar», es como si hubiera declarado
+que estoy seguro de que yo no he dicho nada, que estoy
+seguro de que eso, de alguna forma, «se ha dicho a sí
+mismo».
+
+—Si una persona nos está habla que te habla y luego
+pretende no habernos dicho ni mú, es que está loca.
+Cualquiera la calificaría de loca. Una vez conocí a un
+esquizofrénico que decía que no era él quien decía lo que
+decía, que eran voces que hablaban en su cabeza y cosas
+así.
+
+—De acuerdo. Se trata, en efecto, de una locura. Las
+matemáticas son una especie de locura. De hecho, la
+filosofía, la ciencia, la capacidad de razonar debieron de ser
+una especie de ataque de locura que le dio a la Humanidad,
+allá por la Grecia clásica, desde el momento en que Tales
+de Mileto se cayó en un pozo. Ahora bien, no todas las
+locuras son iguales. Esta locura es lo que llamamos
+civilización occidental. No digo que no sea una locura, pero
+es una muy particular. Puede que los griegos sintieran que
+se habían vuelto locos cuando dedujeron el teorema de
+Pitágoras. En todo caso, debieron de sentir una perplejidad
+enorme. «$H^2=C^2+D^2$»\footnote{Donde $H$ es la hipotenusa y tanto $C$ como $D$ son los otros dos catetos, es decir, los otros dos lados del triángulo.}, he aquí una frase bien curiosa. Tan
+curiosa que, al contrario de lo que pasa con todas las
+frases, para decirla no importa nada el hecho de ser
+espartano, o ateniense, o persa. Debió de ser un
+descubrimiento impresionante el haber dado de pronto con
+algo con lo que los atenienses y los espartanos, pese a
+todas sus guerras, todas sus diferencias, todas sus
+rivalidades, tenían que estar forzosamente de acuerdo. Algo
+respecto de lo que los griegos y los persas, que parecían
+fatalmente destinados a matarse en la guerra, tuvieran que
+estar de acuerdo por encima de sus desacuerdos, por
+encima de la diferencia insalvable de sus dioses, de su
+lengua, de sus costumbres, de su condición política, etc. Es
+posible afirmar que, en ese mismo momento, debieron de
+sentir como que se caían en un pozo desde el que se
+vislumbraba una Nueva Tierra en la que espartanos y
+atenienses y persas tenían que estar necesariamente de
+acuerdo, lo quisieran o no.
+
+%\notar{Una tierra de todos y de nadie}
+En efecto. Al deducir un teorema, como el teorema de
+Pitágoras, estamos diciendo algo así como esto: «Yo
+digo que $H^2=C^2+D^2$ y soy ateniense, pero si en lugar de ser
+ateniense fuera espartano, diría lo mismo. Yo digo que
+$H^2=C^2+D^2$ y soy griego, pero si en lugar de ser griego fuera
+persa, diría lo mismo. Digo eso y soy gallego, o catalán o
+de Getafe, pero si fuera andaluz o francés o esquimal o
+chino, diría lo mismo». «Digo que $H^2=C^2+D^2$ y soy mujer, pero
+si fuera hombre diría lo mismo». En realidad, la cosa es aún
+más radical: «Digo que $H^2=C^2+D^2$ y soy ciudadano, pero si
+fuera esclavo diría lo mismo; soy rico, pero si fuera pobre
+diría lo mismo. Soy más bien depresivo o más bien
+simpático o quizá soy anoréxico, neurótico obsesivo,
+histérico o bipolar. Quizá tuve una infancia feliz o una
+infancia desgraciada, un padre alcohólico, una madre yonqui
+o un abuelo ministro: el caso es que dos y dos son cuatro y
+que $H^2=C^2+D^2$». Así pues, los griegos debieron quedarse
+perplejos ante el descubrimiento de la geometría. El vocablo
+«geometría» nombra el arte de medir la Tierra. Pero ¿qué
+tierra es esa que mide la geometría si no es la de los
+espartanos, ni la de los atenienses ni la de los persas? A
+través de la geometría, los griegos debieron vislumbrar un
+horizonte en el que se anunciaba otra forma de habitar la
+tierra, una tierra que, de pronto, había dejado de pertenecer
+a los espartanos, a los atenienses, a los persas, y también,
+de alguna manera, a los ricos, a los pobres, a los varones,
+a las mujeres, a los ciudadanos o a los esclavos. En cuanto
+a la tierra de las matemáticas todos somos iguales.
+
+
+Es fácil comprender que sería un grave error, a la hora de
+hacer matemáticas, tratarse a uno mismo en tanto que
+espartano, si uno es espartano, o en tanto que ateniense o
+persa, si es que se es eso o lo otro. Si uno es catalán,
+%\notar{Las opiniones personales}
+gallego o andaluz, lo peor que puede hacer a la hora de
+hacer matemáticas es ponerse a deducir teoremas «a la
+catalana», «a la gallega» o «a la andaluza», como si
+estuviese cocinando pulpo, butifarra o pescaditos fritos. En
+matemáticas lo peor que podemos hacer es aportar nuestra
+opinión personal. Pongamos, por ejemplo, que se trata de
+sumar dos más uno. Uno tiene perfecto derecho a opinar
+que dos más uno son un millón. Pongamos que Juan está
+enamorado de Ana y que ha concertado una cita con ella
+con toda la ilusión del mundo. Pongamos que Ana acude a
+la cita, pero que lo hace en compañía de Pedro, su antiguo
+novio. «¡Bueno, no es para ponerse así!», dice Ana ante las
+protestas de Juan, «¡cualquiera diría que he venido
+acompañada de un regimiento! Al fin y al cabo sólo he
+venido con uno.» Se comprenderá el punto de vista de Juan
+si le contesta: «¿Y qué más da uno que un millón? ¿Es que
+tú no entiendes eso de que dos son compañía pero tres
+son multitud?». Ahora bien, ¿cuántos son dos y dos para
+los gallegos o para los catalanes? ¿Y para los persas? ¿Y
+para los que han tenido una infancia desgraciada, un
+padre borracho o un abuelo ministro, para los que son
+más bien insociables y solitarios o son juerguistas y
+extrovertidos?
+
+%\notar{Más allá del ser humano}
+
+En resumidas cuentas, cuando estamos sentados en clase
+de matemáticas deduciendo un teorema, estamos
+colocados en un lugar bien misterioso. Un lugar en el que,
+curiosamente, nosotros mismos no pintamos nada. Se trata
+de un lugar en el que da igual que seamos gallegos o persas,
+ricos o pobres, hombres o mujeres, cristianos o musulmanes,
+un lugar en el que dan igual los avatares de nuestra infancia
+o las peculiaridades de nuestro carácter. Pero conviene que
+seamos incluso más radicales: en ese lugar no es que dé
+completamente igual qué tipo de persona seamos, sino que,
+en realidad, da igual que seamos humanos o no. Es más, así
+como hemos visto que sería una mala idea cocinar el
+teorema de Pitágoras a la gallega, también sería una mala
+idea cocinarlo «con mucha humanidad». 
+
+El «hombre» tampoco
+pinta nada en las matemáticas. Así como no conviene
+tratarse a uno mismo en tanto que gallego o castellano a la
+hora de sumar dos y dos, tampoco conviene tratarse a uno
+mismo en tanto que ser humano. Cuando demostramos el
+teorema de Pitágoras decimos algo que diríamos igual si en
+lugar de ser gallegos fuéramos castellanos o quién sabe si
+persas. Pero, en realidad, decimos algo que tendríamos que
+decir igual si en lugar de ser seres humanos fuésemos\ldots~
+pongamos que marcianos o ángeles. 
+
+Cuando hacemos
+matemáticas no nos tratamos a nosotros mismos en tanto
+que humanos, sino en tanto que seres racionales. Así pues,
+si existieran los marcianos o los ángeles, el caso es que en
+clase de matemáticas sentiríamos que (tras superar algunos
+detalles técnicos de traducción) no habría diferencia entre
+unos y otros a la hora de contestar a qué equivale el
+cuadrado de la hipotenusa. 
+%\notar{La extensión de la ciudadanía a todos los seres humanos}
+De hecho, en la sonda espacial
+Pioneer-10 que, tras cruzar la órbita de Júpiter, estaba
+destinada a perderse en el espacio en 1973, la \textsc{nasa}
+introdujo unos mensajes destinados a cualquier ser racional
+que pudiera encontrarse con ellos: un dibujo de un hombre y
+una mujer, un disco de los Beatles y la serie de los números
+primos. Las sondas Voyager que lanzaron después también
+iban repletas de «jeroglíficos científicos». 
+
+Seguramente los
+marcianos no existen, pero la capacidad del hombre de
+tratarse a sí mismo en tanto que ser racional le ha hecho, ya
+siempre de antemano, partícipe de una comunidad más
+extensa que la mera especie humana y es eso lo que
+introduce en la historia de las civilizaciones un concepto
+absolutamente excepcional y absolutamente irrenunciable de
+ciudadanía. No parece muy probable que a los marcianos les
+llegue a gustar el disco de los Beatles en caso de que algún
+día lleguen a encontrarlo. No sabemos si tendrán siquiera
+oídos para escucharlo; en cualquier caso, seguro que no
+están educados para entender la moda terrícola de los años
+sesenta del siglo \textsc{xx}. Pero si a los marcianos se les envía una
+señal con la serie de los números primos, sean como sean,
+tienen que llegar a estar de acuerdo con ella: porque al igual
+que los humanos podemos tratarnos a nosotros mismos en
+tanto que seres racionales (y no sólo en tanto que humanos),
+los marcianos tienen que ser capaces de tratarse a sí
+mismos, además de como marcianos, en tanto que seres
+racionales. 
+
+En la medida en que puedan captar una señal
+electromagnética, o tocar unos bultitos como de braille, o
+escuchar unos pitidos, o ver unas manchitas que sigan la
+serie uno, dos, tres, cinco, siete\ldots~, los marcianos
+comprenderán que, allá en los confines del universo,
+perdidos en la inmensidad del espacio, existen unos
+seres con los que ya están de acuerdo en algo,
+unos seres que ya son, al menos en ese sentido, iguales
+a ellos, sus hermanos, sus conciudadanos en una
+comunidad universal.
+
+%\notar{El esclavo de Menón}
+Según nos cuenta Platón, un sofista llamado Menón le
+dijo a Sócrates que el conocimiento era algo
+imposible. Sócrates, entonces, mandó llamar a un esclavo
+completamente ignorante y le pidió que dibujase un
+cuadrado el doble de grande que una de las baldosas del
+suelo. Como el esclavo no tenía ni idea de nada, comenzó
+doblando el lado de la baldosa, pero en seguida se dio
+cuenta de que el cuadrado que le salía era cuatro veces y
+no dos veces el que intentaba dibujar. «¡Por Zeus,
+Sócrates, yo no sé nada de todo esto, no soy nadie para
+resolver este tipo de problemas, soy un esclavo y nunca
+he estudiado matemáticas!», exclamó. Pero Sócrates
+empezó entonces a hacerle preguntas: «¿Cuántas veces
+más es cuatro que dos? ¿Dos es la mitad de cuatro?». Y
+siguió preguntando así hasta que el esclavo dibujó la
+diagonal de la baldosa inicial, cortándola por la mitad.
+Luego, dibujó un cuadrado tomando como lado esa
+diagonal. Sin darse cuenta había desembocado en una
+demostración particular del teorema de Pitágoras: el
+cuadrado de la diagonal de un cuadrado tiene dos veces
+la superficie de éste.
+
+%\notar{La ventaja de no saber nada}
+En consecuencia, para hacer matemáticas no hacía falta
+ser ateniense ni espartano, ni siquiera griego. Un
+esclavo se sabe, en realidad, el teorema de Pitágoras, a
+poco que piense sobre ello. Un esclavo, diría Menón, no es
+nadie para hacer matemáticas, ni sabe nada de
+matemáticas. Paradójicamente, lo que le hacer ver
+Sócrates es que, para las matemáticas, es muy bueno ser
+nadie y saber que no sabes nada.
+
+Así pues, al hacer matemáticas, nos esforzamos por
+colocarnos en un lugar que, como decíamos, es bien
+enigmático, ya que desde él comprendemos no sólo que
+es indiferente que seamos gallegos, españoles o persas,
+sino incluso que da igual que seamos, incluso, marcianos
+o ángeles. Se trata de ese lugar en el que somos,
+sencillamente, seres racionales. Ahora bien, el ejemplo
+del que nos hemos valido hasta aquí no debe
+confundirnos. Hemos hablado todo el rato de matemáticas
+porque es el ejemplo más agradecido. 
+
+Pero ese lugar del que estamos hablando no lo ocupamos sólo al hacer
+matemáticas, sino cada vez que razonamos algo. Otro
+asunto es, por supuesto, que apar te de las matemáticas,
+con respecto a otro tipo de temas, sea mucho más difícil
+hacer un razonamiento bien hecho. Pero el hecho de que
+sea más difícil no cambia la naturaleza de la cosa. No es
+verdad, como a veces suele decirse, que en matemáticas
+las cosas sean necesarias y exactas y que, en cambio, en
+Historia, en Sociología o en Filosofía todo sea «cuestión      
+de opiniones». 
+
+Ni muchísimo menos es así. Pongamos que         
+estamos estudiando la Revolución francesa o las causas         
+del crecimiento del paro desde 1980. Al matemático que         
+demostraba el teorema de Pitágoras le exigíamos que
+fuera capaz de decir algo así como «si yo no fuera yo, diría
+lo mismo». Pues bien, exactamente lo mismo hay que
+pedirle al historiador que estudia la Revolución francesa, o
+al economista que estudia las causas del paro. No nos
+interesa para nada (por lo menos en un ámbito
+académico) lo que los gallegos opinan sobre la Revolución
+francesa: a no ser, naturalmente, que estemos estudiando
+a los gallegos en el curso, por ejemplo, de una
+investigación etnográfica (pero en ese caso, ya no se
+trataría de estudiar la Revolución francesa, sino de
+estudiar al pueblo gallego). 
+
+Puede que nuestro profesor de
+historia, sea, por ejemplo, gallego, pero a la hora de  
+hablarnos sobre la Revolución francesa, nos interesa que
+diga cosas objetivas, no que nos hable en tanto que
+gallego. Si nuestra profesora es mujer, no esperamos que
+nos dé un punto de vista femenino sobre la Revolución
+francesa. Por supuesto que nos tendrá que explicar el
+importante papel que desempeñaron las mujeres en dicha
+revolución, pero eso lo deberá hacer cualquier historiador
+riguroso y objetivo, ya sea hombre o mujer. Si los
+historiadores varones tienen más tendencia a omitir esa
+par te, será, precisamente, porque están dejando que se
+inmiscuyan sus opiniones machistas en su trabajo
+científico. 
+
+Por lo mismo, si nuestro profesor es rico o
+pobre, no nos interesa nada que nos explique cómo se ve
+la Revolución francesa desde las atalayas de la riqueza o
+desde los suburbios de la indigencia. Por supuesto, para
+estudiar historia con seriedad, no podrán dejar de tenerse
+en cuenta las condiciones económicas de la Revolución,
+pero esas condiciones económicas son las de la
+revolución y no las de nuestro profesor. Tampoco nos
+interesa que se cocine la Revolución francesa según la
+receta de una infancia desgraciada, un carácter
+extrovertido o una personalidad depresiva que siempre
+suele verlo todo por el lado malo. 
+
+En realidad,
+exactamente lo mismo que en clase de matemáticas, nos
+interesa que el profesor de Historia pueda declarar,
+respecto de cada cosa que diga: «Digo esto y esto sobre
+la Revolución francesa y lo digo por esto y esto que he
+dicho antes, por esto y estos datos, por estos y estos
+razonamientos». Es decir: «Digo esto y seguiría diciendo lo
+mismo si en lugar de ser español o francés fuera italiano
+o persa, si en lugar de ser mujer fuera hombre, si en lugar
+de depresivo fuera optimista, sociable y extrovertido». En
+realidad, lo ideal sería que, sobre la Revolución francesa,
+en clase de Historia, el profesor nos dijera cosas que
+seguiría diciendo igual en el caso de que en lugar de ser
+un ser humano fuera un marciano. 
+
+Bien es verdad, por
+supuesto, que eso resulta, en el ámbito de estudio de la
+historia, mucho más difícil que en matemáticas. Es mucho
+más difícil ser objetivo a la hora de hablar sobre la
+Revolución francesa o sobre las causas del paro que a la
+hora de sumar dos y dos. Pero el que sea mucho más
+difícil no implica en absoluto que se trate de otra cosa.
+¡Las ciencias humanas están menos desarrolladas que las
+matemáticas, qué se le va a hacer! Pero eso no quiere
+decir que se espere de ellas otra cosa que la objetividad.
+Sólo faltaría que en clase de economía, a la hora de
+contarnos las causas del paro a partir de 1980, un
+profesor nos contara lo que sobre esa cuestión le
+conviene a él, que es rico, que nos creamos nosotros, que
+somos pobres. Y sí, la verdad es que, fuera de clase de
+matemáticas, es muy probable que nos den gato por
+liebre. El profesor de matemáticas lo tiene más difícil,
+pero el profesor de economía con más facilidad puede ser
+un impostor que nos va a contar las cosas según le
+conviene, o según conviene a los que le pagan, o a los
+que tienen la sartén por el mango en este mundo en
+el que todos vivimos. Pero eso lo único que indica es que
+\end{document}

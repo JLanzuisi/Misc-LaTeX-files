@@ -1,0 +1,106 @@
+\documentclass[draft,letterpaper,10pt]{article}
+\usepackage[top=2.5cm,bottom=2.5cm,right=4.3cm,left=4.3cm]{geometry}
+
+\usepackage{polyglossia}
+\setmainlanguage[spanishoperators=all]{spanish}
+\PolyglossiaSetup{spanish}{indentfirst=false}
+
+\PassOptionsToPackage{explicit}{titlesec}
+\PassOptionsToPackage{final}{microtype}
+\usepackage{hyperref,titlesec,enumitem,fontspec,microtype,fancyhdr}
+
+\setmainfont[
+Numbers={Proportional,OldStyle},
+SmallCapsFeatures={LetterSpace=4}
+]{TeX Gyre Heros}
+\defaultfontfeatures{Scale=MatchLowercase}
+\setmonofont{Latin Modern Mono}
+\newfontfamily{\dispfont}{Libre Bodoni}
+
+\linespread{1.04}
+
+\titleformat{\section}
+{\dispfont}
+{}
+{0em}
+{#1} 
+[]
+\titlespacing*{\section}
+{0em}
+{1.5em}
+{0.5em}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{Jhonny Lanzuisi \textbullet\ Résumé}
+% \fancyfoot[R]{\thepage}
+
+\newcommand{\entryone}[2]{
+{\noindent\textsc{#1}}
+\begin{quotation}
+	\noindent#2.
+\end{quotation}
+}
+
+\setlist[description]{style=nextline,font=\normalfont,leftmargin=\parindent,itemsep=.8em}
+
+\let\oldtextsc=\textsc
+\renewcommand{\textsc}[1]{\oldtextsc{\MakeLowercase{#1}}}
+\newcommand{\enraya}{–}
+\newcommand{\itemtitle}[1]{\,{\itshape\scshape #1}\smallskip}
+
+\begin{document}
+\pagenumbering{gobble}
+\begin{flushright}\Large
+	\dispfont\itshape Jhonny Lanzuisi \\ \medskip\normalfont\normalsize
+	 22 years old. \url{jalb97@gmail.com} \\ \smallskip
+	+58\,414\,917\,68\,51. Caracas, Venezuela 
+\end{flushright}
+\bigskip
+
+\section*{Education}
+\begin{description}
+	\item[2010\enraya2015 \itemtitle{Paul Harris School}] Studied highschool, graduated `Mención en ciencias'.
+	\item[2016\enraya2022 \itemtitle{University `Simón Bolívar'}] Currently studying pure mathematics.
+	\item[2016 \itemtitle{Wall Street English Institute}] Reached `Treshold' level.
+	\item[2016\enraya2017 \itemtitle{Conservatory `Pedro Nolasco Colón'}] Music school, studied music theory and solfège, took piano lessons.
+\end{description}
+
+% \entryone{2010-2015\hspace{.3em} u. e. colegio paul harris (caracas)}{Bachiller en Ciencias}
+% \entryone{2016-2022\hspace{.3em} (en curso) universidad simón bolívar (caracas)}{Licenciatura, Matemáticas Puras}
+% \entryone{2016\hspace{.3em} wall street english (nueva esparta)}{Nivel `Threshold' de inglés}
+% \entryone{2016\hspace{.3em} escuela de música pedro nolasco colón (caracas)}{Teoría y solfeo}
+\section*{Work experience}
+\begin{description}
+	\item[2018\enraya2019 \itemtitle{Math teaching}] Tought highschool students basic mathematics.
+	\item[2018 \itemtitle{English teaching}] Also tought english in private lessons. 
+\end{description}
+% \entryone{2018\hspace{.3em} clases particulares de matemáticas}{a estudiantes de educación media}
+% \entryone{2018\hspace{.3em} clases de inglés}{a estudiantes de un nivel de inglés básico}
+
+\section*{Technical knowledge}
+\begin{description}
+	\item[\itemtitle{Programming Languages}] Advanced knowledge of \LaTeX; to typeset all kinds of documents. Basic knowledge of \emph{Python \& C}. Mostly self-taught.
+	\item[Typography \& Design] Advanced knowledge of typography. Basic knowledge of \emph{InDesign \& Photoshop} for desingning and editing photos and logos.
+	\item[Operating Systems]  Good knowledge of \emph{Microsoft Windows} and it's office suite, like \emph{Word} or \emph{Excel}. Good knowledge of the \emph{\textsc{gnu}/Linux} operating system and it's distributions.
+\end{description}
+% \entryone{administración de sistemas operativos}{Conocimiento del sistema operativo \textsc{Microsoft Windows} y sus aplicaciones de oficina usuales como \textsc{Word} o \textsc{Excel}. Dominio del sistema operativo \textsc{gnu/Linux} y sus distintas distribuciones.}
+% \entryone{lenguajes de programación}{Conocimiento intermedio de \textsc{\LaTeX, Markdown}; para escribir documentos de todo tipo. Conocimiento básico de \textsc{python, c}}
+% \entryone{diseño}{Conocimiento básico de \textsc{Inkscape, gimp} para diseñar y editar imágenes y logos}
+
+\section*{Languages}
+\begin{description}
+	\item[Spanish] Native language.
+	\item[English] Studied english in one private institute (mentioned earlier) and took six university courses (three of which were directed towards mathematics).
+	\item[French] Basic level of french, took a single introductory university course.
+\end{description}
+% \entryone{español}{Lengua materna}
+% \entryone{inglés}{Nivel avanzado de inglés}
+% \entryone{francés}{Nivel básico de francés}
+
+\section*{Other activities}
+\begin{description}
+	\item[(Sport) Karate-do itosu-kai]	Studied Karate and attended national competitions, like the `I campeonato nacional de Karato-Do en el estado Vargas'.
+	\item[Astronomy] I belong to the astronomical investigations group (\textsc{GUIA}), of the University `Simón Bolívar'.
+\end{description}
+\end{document}

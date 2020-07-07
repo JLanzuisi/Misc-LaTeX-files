@@ -1,0 +1,39 @@
+\documentclass[10pt,final,twoside]{book}
+\input{../Universidad/preamble-book-test.tex}
+
+\includeonly{
+	metadata,
+	notaEdicion,
+	prefacio,
+	cap1,
+%	cap2,
+%	cap3,
+%	cap4,
+}
+
+\begin{document}
+% \raggedright\setlength{\parindent}{\savedparindent}
+% \raggedbottom
+\begin{titlepage}
+\includepdf[fitpaper=true]{portada}	
+\end{titlepage}
+\thispagestyle{empty}
+\frontmatter
+\include{metadata}
+\tableofcontents
+\include{notaEdicion}
+\include{prefacio}
+
+\mainmatter
+\include{cap1}
+\include{cap2}
+\include{cap3}
+\include{cap4}
+
+\backmatter
+% \printendnotes
+\printbibliography[
+heading=bibintoc,
+title={Bibliografía}
+]
+\end{document}

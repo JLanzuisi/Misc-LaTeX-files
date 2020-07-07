@@ -1,0 +1,112 @@
+\documentclass[draft,letterpaper,10pt]{article}
+\usepackage[top=2.5cm,bottom=2.5cm,right=4.3cm,left=4.3cm]{geometry}
+
+\usepackage{polyglossia}
+\setmainlanguage[spanishoperators=all]{spanish}
+\PolyglossiaSetup{spanish}{indentfirst=false}
+
+\PassOptionsToPackage{explicit}{titlesec}
+\PassOptionsToPackage{final}{microtype}
+\usepackage{hyperref,titlesec,enumitem,fontspec,microtype,fancyhdr}
+
+\setmainfont[
+Numbers={OldStyle,Proportional},
+SmallCapsFont={Latin Modern Roman Caps},
+SmallCapsFeatures={LetterSpace=10}
+]{Latin Modern Roman}
+\defaultfontfeatures{Scale=MatchLowercase}
+\newfontfamily{\secfont}[SmallCapsFeatures={LetterSpace=10},Numbers={OldStyle,Proportional}
+]{Fira Sans}
+
+\setmonofont{Iosevka Fixed Curly Light Extended}
+
+\newfontfamily{\dispfont}[Numbers={OldStyle,Proportional}]{Fira Sans Light}
+
+\linespread{1.04}
+
+\titleformat{\section}
+{\secfont\scshape\fontsize{11}{11}\selectfont}
+{}
+{0em}
+{\MakeLowercase{#1}} 
+[]
+\titlespacing*{\section}
+{0em}
+{1.5em}
+{0.5em}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\dispfont Jhonny Lanzuisi \textbullet\ Curriculum Vit\ae}
+% \fancyfoot[R]{\thepage}
+
+\newcommand{\entryone}[2]{
+{\noindent\textsc{#1}}
+\begin{quotation}
+	\noindent#2.
+\end{quotation}
+}
+
+\setlist[description]{font=\normalfont\dispfont\fontsize{11}{11}\selectfont,leftmargin=2\parindent}
+
+\let\oldtextsc=\textsc
+\renewcommand{\textsc}[1]{\oldtextsc{\MakeLowercase{#1}}}
+\newcommand{\enraya}{–}
+\begin{document}
+\pagenumbering{gobble}
+\begin{center}\LARGE
+	\dispfont Jhonny Lanzuisi \\ \medskip\large
+	22 años. \url{jalb97@gmail.com} \\ \smallskip
+	0414 917 68 51. Caracas, Venezuela 
+\end{center}
+\medskip
+
+\section*{Educación}
+\begin{description}
+	\item[2010\enraya2015]Bachillerato en \emph{U. E. Colegio Paul Harris}: Bachiller en ciencias.
+	\item[2016\enraya2022\enspace ] \emph{Universidad Simón Bolívar}: Licenciatura en Matemáticas Puras.
+	\item[2016] Instituto de inglés \emph{Wall Street English}: Nivel `Threshold' de inglés.
+	\item[2016\enraya2017] Escuela de música \emph{Pedro Nolasco Colón}: Teoría y solfeo, piano.
+\end{description}
+
+% \entryone{2010-2015\hspace{.3em} u. e. colegio paul harris (caracas)}{Bachiller en Ciencias}
+% \entryone{2016-2022\hspace{.3em} (en curso) universidad simón bolívar (caracas)}{Licenciatura, Matemáticas Puras}
+% \entryone{2016\hspace{.3em} wall street english (nueva esparta)}{Nivel `Threshold' de inglés}
+% \entryone{2016\hspace{.3em} escuela de música pedro nolasco colón (caracas)}{Teoría y solfeo}
+\section*{Experiencia}
+\begin{description}
+	\item[2018\enraya2019] \emph{Clases} particulares \emph{de matemáticas}: a estudiantes de educación media.
+	\item[2018] \emph{Clases de inglés}: a estudiantes de un nivel básico de inglés.
+\end{description}
+% \entryone{2018\hspace{.3em} clases particulares de matemáticas}{a estudiantes de educación media}
+% \entryone{2018\hspace{.3em} clases de inglés}{a estudiantes de un nivel de inglés básico}
+
+\section*{Conocimiento Técnico}
+\begin{description}
+	\item[2018\enraya Actualmente] \emph{Lenguajes de programación}: Conocimiento avanzado de \emph{\LaTeX}; para escribir documentos de todo tipo. Conocimiento básico de \emph{Python \& C}.
+	\item[2019\enraya Actualmente]Conocimiento avanzado sobre \emph{tipografía}. Conocimiento básico de \emph{InDesign \& Photoshop} para diseñar y editar imágenes y logos
+	\item[2016\enraya Actualmente] \emph{Sistemas operativos}: Conocimiento del sistema operativo \emph{Microsoft Windows} y sus aplicaciones de oficina usuales como \emph{Word} o \emph{Excel}. Dominio del sistema operativo \emph{\textsc{gnu}/Linux} y sus distintas distribuciones
+\end{description}
+% \entryone{administración de sistemas operativos}{Conocimiento del sistema operativo \textsc{Microsoft Windows} y sus aplicaciones de oficina usuales como \textsc{Word} o \textsc{Excel}. Dominio del sistema operativo \textsc{gnu/Linux} y sus distintas distribuciones.}
+% \entryone{lenguajes de programación}{Conocimiento intermedio de \textsc{\LaTeX, Markdown}; para escribir documentos de todo tipo. Conocimiento básico de \textsc{python, c}}
+% \entryone{diseño}{Conocimiento básico de \textsc{Inkscape, gimp} para diseñar y editar imágenes y logos}
+
+\section*{Languages}
+\begin{description}
+	\item[Spanish] Native language.
+	\item[English] Studied english in one private institute (mentioned earlier) and took six university courses (three of which were directed towards mathematics).
+	\item[French] Basic level of french, took a single introductory university course.
+\end{description}
+% \entryone{español}{Lengua materna}
+% \entryone{inglés}{Nivel avanzado de inglés}
+% \entryone{francés}{Nivel básico de francés}
+
+\section*{Other activities}
+\begin{description}
+	\item[(Sport) Karate-do itosu-kai]	Studied Karate and attended national competitions, like the `I campeonato nacional de Karato-Do en el estado Vargas'.
+	\item[Astronomy] I belogn to the astronomical investigations group (\textsc{GUIA}), of the University `Simón Bolívar'.
+\end{description}
+% \entryone{karate-do itosu-kai}{Practiqué Karate como deporte durante un año y medio, y asistí a competencias nacionales, como el I campeonato nacional de Karato-Do en el estado Vargas}
+% \entryone{grupo universitario de investigaciones astronómicas}{Soy parte del grupo universitario \textsc{GUIA}, de la Universidad Si\-món Bolívar}
+
+\end{document}

@@ -1,0 +1,57 @@
+\documentclass[10pt]{article}
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-9.965889718839861,-5.504463069338251) rectangle (10.222990204880357,8.101086444473202);
+\fill[line width=0.4pt,fill=black,fill opacity=0.02] (0,0) -- (1,3) -- (3,4) -- (5,1) -- cycle;
+\draw [line width=0.4pt] (0,0)-- (1,3);
+\draw [line width=0.4pt] (1,3)-- (3,4);
+\draw [line width=0.4pt] (3,4)-- (5,1);
+\draw [line width=0.4pt] (5,1)-- (0,0);
+\draw [line width=0.4pt] (2,3.5)-- (0.5,1.5);
+\draw [line width=0.4pt] (0.5,1.5)-- (2.5,0.5);
+\draw [line width=0.4pt] (2,3.5)-- (4,2.5);
+\draw [line width=0.4pt] (4,2.5)-- (2.5,0.5);
+\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (1,3)-- (5,1);
+\draw [line width=0.4pt,dash pattern=on 1pt off 1pt] (3,4)-- (0,0);
+\draw [line width=0.4pt,domain=-9.965889718839861:10.222990204880357] plot(\x,{(-0-2*\x)/4});
+\draw [line width=0.4pt,domain=-9.965889718839861:10.222990204880357] plot(\x,{(--17-4*\x)/-3});
+\draw [line width=0.4pt,domain=-9.965889718839861:10.222990204880357] plot(\x,{(--11-1*\x)/2});
+\draw [line width=0.4pt,domain=-9.965889718839861:10.222990204880357] plot(\x,{(-5-4*\x)/-3});
+\draw [line width=0.4pt,dash pattern=on 1pt off 1pt,domain=-9.965889718839861:10.222990204880357] plot(\x,{(-1.5909090909090908--0.9545454545454546*\x)/0.09090909090909083});
+\draw [line width=0.4pt,dash pattern=on 1pt off 1pt,domain=-9.965889718839861:10.222990204880357] plot(\x,{(--5.409090909090908-0.045454545454545414*\x)/2.090909090909091});
+\draw [line width=0.4pt,dash pattern=on 1pt off 1pt,domain=-9.965889718839861:10.222990204880357] plot(\x,{(--9-1*\x)/2});
+\begin{scriptsize}
+\draw [fill=black] (0,0) circle (1.5pt);
+\draw[color=black] (-0.1849416812611226,0.37873537634212356) node {$A$};
+\draw [fill=black] (1,3) circle (1.5pt);
+\draw[color=black] (0.9018303229142929,3.409157311062032) node {$B$};
+\draw [fill=black] (3,4) circle (1.5pt);
+\draw[color=black] (3.32616787069022,4.3705325455249) node {$C$};
+\draw [fill=black] (5,1) circle (1.5pt);
+\draw[color=black] (5.332516186090986,1.361010072423749) node {$D$};
+\draw [fill=black] (2,3.5) circle (1.5pt);
+\draw[color=black] (1.9468034038521926,3.95254331314974) node {$$M_{BC}$$};
+\draw [fill=black] (4,2.5) circle (1.5pt);
+\draw[color=black] (4.392040413246877,2.9075702322118406) node {$$M_{CD}$$};
+\draw [fill=black] (2.5,0.5) circle (1.5pt);
+\draw[color=black] (2.615586175652448,0.19064022177330164) node {$$M_{DA}$$};
+\draw [fill=black] (0.5,1.5) circle (1.5pt);
+\draw[color=black] (0.003153473307699328,1.8416976896551829) node {$$M_{AB}$$};
+\draw [fill=black] (2.090909090909091,4.454545454545454) circle (1.5pt);
+\draw[color=black] (2.636485637271206,4.893019085993849) node {$$M'_{BC}$$};
+\draw [fill=black] (6.090909090909091,2.4545454545454546) circle (1.5pt);
+\draw[color=black] (6.628282806453982,2.8866707705930823) node {$$M'_{CD}$$};
+\draw [fill=black] (1.9090909090909092,2.5454545454545454) circle (1.5pt);
+\draw[color=black] (2.1348985584210145,2.0715917674615207) node {$O$};
+\draw [fill=black] (-0.9090909090909091,0.45454545454545453) circle (1.5pt);
+\draw[color=black] (-1.0418196076302002,0.9848197632861053) node {$$M'_{AB}$$};
+\draw [fill=black] (3.090909090909091,-1.5454545454545454) circle (1.5pt);
+\draw[color=black] (2.970877023171334,-0.8961317824021138) node {$$M'_{DA}$$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

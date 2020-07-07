@@ -1,0 +1,242 @@
+% Clase del documento y tamano de letra
+\documentclass[draft,11pt,letterpaper,openany,fleqn,leqno]{book}
+% Márgenes
+%\usepackage[top=2cm,bottom=1.5cm,left=2.8cm,right=2.8cm,marginpar=2cm]{geometry}
+\usepackage[top=3.5cm,bottom=4cm,left=5cm,right=5cm,marginpar=3.5cm]{geometry}
+%\usepackage[left=2cm,right=8cm,asymmetric,marginpar=5.5cm,marginparsep=.7cm,twoside]{geometry} % Usar para doble-lado
+% Idioma Español
+\usepackage[spanish]{babel}
+% UTF8
+\usepackage{amsmath}
+% Paquetes de mate
+% Fuentes: STIX2 para texto y matemáticas, FiraSans para sans serif, FiraMono para monoespaciada, CooperHewitt para títulos.
+\usepackage{cfr-lm}
+\usepackage[light,scale=.90]{Chivo}
+\usepackage[scale=.85]{plex-mono}
+\newcommand{\titlefont}{\fontfamily{LibreBodoni-TLF}\selectfont}
+\usepackage[bb=fourier,scr=dutchcal,cal=boondoxo,frak=euler]{mathalfa}
+\usepackage{bm}
+\frenchspacing
+\hfuzz1pc
+\usepackage[final,tracking=smallcaps,expansion=alltext,protrusion=true]{microtype}
+\SetTracking{encoding=*,shape=sc}{50}
+% Paquetes varios
+\usepackage{marginnote,changepage,graphicx,hyperref,ellipsis,pdfpages,adforn,multicol}
+% Bloques de código
+\usepackage[final]{listings}
+\lstset{
+	numberstyle=\small\ttfamily, 
+	numbersep=8pt, 
+	basicstyle=\ttfamily,
+	framexleftmargin=15pt,
+	xleftmargin=1.6em,
+}
+% Colores
+\usepackage[]{xcolor}
+\definecolor{darkgrei}{HTML}{3a3335}
+\definecolor{grei}{HTML}{b7ad99}
+\definecolor{peach}{HTML}{ffd9da}
+\definecolor{wine}{HTML}{722f37}
+\definecolor{wine2}{HTML}{c02132}
+\definecolor{wine3}{HTML}{66000c}
+\definecolor{wine4}{HTML}{cdd8ff}
+% Lista de contenidos
+\addto\captionsspanish{
+	\renewcommand{\contentsname}
+	{\lsstyle ÍNDICE}			% Nombre personalizado de la lista
+}
+\usepackage{titletoc}
+\usepackage{titletoc}
+\titlecontents{chapter}
+[1.6em]                                   % Margen izquierdo
+{\vspace{1em}}%
+{\contentsmargin{0pt}\scshape                  % Formato de la entrada%
+	\large}
+{\contentsmargin{0pt}\Large}            % Formato de entrada sin número
+{}                 		
+[\vspace{0pt}]						% Paquete para formato personalizado de la lista
+\titlecontents{section}
+[1.6em]                                   % Margen izquierdo
+{\vspace{.7em}}%
+{\contentsmargin{0pt}	                   % Formato de la entrada%
+}
+{\contentsmargin{0pt}\Large}            % Formato de entrada sin número
+{\small\contentspage}                 		
+[\vspace{6pt}] 
+\titlecontents{subsection}					% El formato es el mismo que antes
+[1.6em]                                               
+{}%
+{\contentsmargin{0pt}\itshape                             
+	\enspace%
+}
+{\contentsmargin{0pt}\large}                      
+{\small\contentspage}                 
+[\vspace{3pt}]
+
+% Comando para el nombre de la sección actual
+\usepackage{nameref}
+\makeatletter
+\newcommand*{\currentname}{\@currentlabelname}
+\makeatother
+% Formato de secciones y subsecciones
+\usepackage[compact]{titlesec}
+\titleformat{\chapter}[display]
+{\flushleft\titlefont\LARGE\itshape}
+{\hspace{-2em} Capítulo\, \upshape\thechapter}
+{0.5em}
+{}
+[]
+\titlespacing*{\chapter}
+{0em}
+{0em}
+{1.5em}
+\titleformat{\section}[display]
+{\flushleft\titlefont\LARGE\itshape}
+{\hspace{-2em} Sección\, \upshape\thesection}
+{0.5em}
+{}
+[]
+\titlespacing*{\section}
+{0em}
+{0em}
+{1.5em}
+\titleformat{\subsection}[hang]
+{\centering\bfseries\titlefont}
+{\S\thesubsection}
+{0.5em}
+{}
+[]
+%	{\hrule\vspace{.15em}}
+%	[\vspace{.15em}\hrule]
+\titlespacing*{\subsection}
+{0em}
+{2em}
+{1em}
+%No indent
+\makeatletter
+% package indentfirst says \let\@afterindentfalse\@afterindenttrue
+% and we revert this modification, reinstating the original definitio
+% of \@afterindentfalse
+\def\@afterindentfalse{\let\if@afterindent\iffalse}
+\makeatother
+% Encabezados y pies de página
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+ % Sin línea horizontal
+\rhead{\color{darkgrei}\sffamily\currentname}
+\rfoot{\sffamily\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancypagestyle{plain}{% Esto cambia el estilo "plain"
+		\fancyhf{}%
+		\fancyfoot[R]{}%
+}
+
+% Listas mas lindas
+%\newcommand\MyRectangle{\rule{.36em}{1.5ex}}
+% Entornos de 'teorema'
+\usepackage[thmmarks]{ntheorem}
+{	% Definiciones
+	\theoremstyle{marginbreak}
+	\theoremindent0cm
+	\theorembodyfont{\normalfont}
+	\theoremheaderfont{\bfseries}
+	\newtheorem{defi}{Definición}[section]
+}
+{	% Teoremas, Corolarios, Proposiciones, Lemas
+	\theoremstyle{margin}
+	\theoremindent0cm
+	\theoremseparator{.}
+	\theoremheaderfont{\itshape}
+	\theorembodyfont{\itshape}
+	\newtheorem{teo}{Teorema}[section]
+	\newtheorem{cor}{Corolario}[section]
+	\newtheorem{prop}{Proposición}[section]
+	\newtheorem{lem}{Lema}[section]
+	% Ejercicios y Ejemplos
+	\theorembodyfont{\normalfont}
+	\theoremheaderfont{\normalfont}
+	\newtheorem{ejem}{Ejemplo}[section]
+	\newtheorem{ejer}{Ejercicio}[section]
+}
+{	% Soluciones (de los ejericicos), Observaciones y demostraciones
+	\theoremstyle{nonumberplain}
+	\theoremindent0cm
+	\theoremheaderfont{\itshape}
+	\theorembodyfont{\normalfont}
+	\theoremseparator{.}
+	\newtheorem{sol}{\itshape Solución}
+	\newtheorem{obs}{\itshape Observación}
+	\theoremsymbol{\ensuremath{\qed}}
+	\newtheorem{proof}{Demostración}
+}
+{	% Notas en el texto
+	\theoremstyle{nonumberplain}
+	\theoremindent0cm
+	\theorempreskip{.5em}
+	\theorempostskip{.5em}
+	\theorembodyfont{\small}
+	\theoremheaderfont{\small}
+	\newtheorem{nota}{\adforn{33}}
+}
+\newcommand{\Nota}[1]{\marginnote{#1}}
+\renewcommand*{\raggedleftmarginnote}{}
+\renewcommand*{\raggedrightmarginnote}{}
+% Citas al principio de las secciones
+\newcommand{\cita}[2]{
+%\pagecolor{wine4}
+\begin{center}
+	\begin{minipage}{.5\linewidth}\centering\small
+		{ ``#1''} \\[1em]
+		\scshape\adforn{63} #2
+	\end{minipage}
+\end{center}
+\vspace{8em}
+%\nopagecolor
+}
+% Notas al pie se resetan por seccion
+\makeatletter
+\@addtoreset{footnote}{section}
+\makeatother
+% Apéndice
+%\newcommand{\apen}{
+%	\titleformat{\section}[display]
+%	{\raggedright\Huge}
+%	{\huge\thesection}
+%	{0em}
+%	{}
+%	[]
+%\titlespacing*{\section}
+%	{0em}
+%	{0em}
+%	{1em}
+%}
+% Macros (Atajos)
+%\newcommand{\n}{\mathrm{n}}
+%\newcommand{\mr}[1]{\symup{#1}}
+%\renewcommand{\emptyset}{\varnothing}
+\newcommand{\id}[1]{\mathfrak{#1}}
+\newcommand{\an}[1]{\mathscr{#1}}
+\newcommand{\subsq}{\subseteq}
+\newcommand{\inv}{^{-1}}
+\newcommand{\notall}[1]{\marginnote{\small \textcolor{darkgray}{#1}}}
+\newcommand{\ho}[2]{\text{hom}(#1,#2)}
+\newcommand{\hoo}[1]{\text{hom}(#1)}
+\renewcommand{\t}{\times}
+\newcommand{\dt}[2]{#1_1 #2 #1_2 #2 \cdots #2 #1_n}
+\newcommand{\li}[2]{\lim_{#1 \to #2}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pds}[2]{\dfrac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\pdx}[3]{\dfrac{\partial^2 #1}{\partial #2 \partial #3}}
+\newcommand{\pol}[1]{#1_n x^n + #1_{n-1} x^{n-1} + \dots + #1_1 x + #1_0}
+\newcommand{\Zn}{\mathscr{Z}/n\mathscr{Z}}
+\newcommand{\Rn}{\mathscr{R}^{\mathrm n}}
+\newcommand{\R}{\mathscr{R}}
+\newcommand{\Co}{\mathscr{C}}
+\newcommand{\Z}{\mathscr{Z}}
+\newcommand{\Q}{\mathscr{Q}}
+\newcommand{\N}{\mathscr{N}}
+\newcommand{\Ha}{\mathscr{H}}
+\newcommand{\eb}[1]{\left\{ #1 \right\}}
+\DeclareMathOperator{\car}{car}

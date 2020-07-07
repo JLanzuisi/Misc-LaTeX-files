@@ -1,0 +1,239 @@
+% Clase del documento y tamano de letra
+\documentclass[draft,10pt,letterpaper,fleqn,twocolumn,openany]{book}
+% Márgenes
+\usepackage[top=3.5cm,bottom=4cm,inner=2.5cm,outer=2.5cm]{geometry}
+% Idioma Español
+\usepackage[spanish,es-noindentfirst]{babel}
+% Fuentes: Charter, Fira sans y mono. Newtx para mate. Tambien Source serif pro para los títulos.
+\usepackage[T1]{fontenc}
+\usepackage[lining]{libertinus-type1}
+\usepackage[scale=.9]{PublicSans}
+\usepackage[scale=.9]{plex-mono}
+\RequirePackage[libertine]{newtxmath}
+\usepackage{bm}
+
+\newcommand{\textord}[1]{\textsuperscript{\hspace*{-3pt} #1}}
+
+\linespread{1.05}
+\frenchspacing
+\hfuzz1pc
+\usepackage[final,tracking=smallcaps,expansion=alltext,protrusion=true]{microtype}
+\SetTracking{encoding=*,shape=sc}{50}
+% Paquetes varios
+\usepackage{marginnote,changepage,graphicx,pdfpages,booktabs,float,tikz,color,caption,adforn}
+\captionsetup{justification=centering,font={footnotesize,sf},margin=.5em}
+\usepackage[makeroom]{cancel}
+%\usepackage[colorlinks=true,allcolors=wine]{hyperref}
+% Bloques de código
+\usepackage[final]{listings}
+\lstset{
+	numberstyle=\small\ttfamily, 
+	numbersep=8pt, 
+	basicstyle=\ttfamily,
+	framexleftmargin=15pt,
+	xleftmargin=1.6em,
+}
+% Colores
+\usepackage{xcolor}
+\definecolor{darkgrei}{HTML}{2b2b2b}
+\definecolor{grei}{HTML}{b7ad99}
+\definecolor{peach}{HTML}{ffd9da}
+\definecolor{wine}{HTML}{8e0918}
+\definecolor{wine2}{HTML}{721620}
+\definecolor{wine3}{HTML}{66000c}
+\definecolor{wine4}{HTML}{cdd8ff}
+% Lista de contenidos
+
+\usepackage{titletoc}
+\titlecontents{chapter}
+[1.6em]                                   % Margen izquierdo
+{\vspace{.3em}}%
+{\contentsmargin{0pt}\scshape                  % Formato de la entrada%
+	\large}
+{\contentsmargin{0pt}\Large}            % Formato de entrada sin número
+{}                 		
+[\vspace{4pt}]						% Paquete para formato personalizado de la lista
+\titlecontents{section}
+	[2.5em]                                   % Margen izquierdo
+	{}%
+	{\contentsmargin{0pt}	                   % Formato de la entrada%
+	 }
+	{\contentsmargin{0pt}\Large}            % Formato de entrada sin número
+	{\small\contentspage}                 		
+	[\vspace{5pt}] 
+\titlecontents{subsection}					% El formato es el mismo que antes
+	[3.5em]                                               
+	{\vspace{-4pt}}%
+	{\contentsmargin{0pt}\small                             
+	 \enspace%
+	}
+	{\contentsmargin{0pt}\large}                      
+	{\small\contentspage}                 
+	[\vspace{3pt}]
+
+% Comando para el nombre de la sección actual
+\usepackage{nameref}
+\makeatletter
+\newcommand*{\currentname}{\@currentlabelname}
+\makeatother
+% Formato de secciones y subsecciones
+\usepackage[compact]{titlesec}
+\newcommand{\HUGE}{\fontsize{70}{70}\selectfont}
+%\newcommand{\dispFont}{\LibertineDisplay}
+\newcommand{\dispSize}{\fontsize{20}{20}\selectfont}
+\newcommand{\secSize}{\fontsize{12}{12}\selectfont}
+
+\titleformat{\chapter}[hang]
+{\flushleft\dispSize\LibertinusDisplay}
+{\HUGE\thechapter}
+{.1em}
+{}
+[]
+\titlespacing*{\chapter}
+{0em}
+{0em}
+{1.5em}
+\titleformat{\section}[hang]
+{\raggedright\secSize\itshape}
+{\S\hspace{1pt}\thesubsection}
+{0.5em}
+{}
+[]
+\titlespacing*{\section}
+{0em}
+{1em}
+{1em}
+\titleformat{\subsection}
+{\flushleft\itshape}
+{\S\hspace{1pt}\thesubsection}
+{.5em}
+{}
+[]
+\titleformat{\paragraph}[runin]
+{\scshape}
+{}
+{0em}
+{}
+[]
+% Encabezados y pies de página
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\sffamily\currentname}
+\rfoot{\sffamily\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\fancypagestyle{plain}{% Esto cambia el estilo "plain"
+		\fancyhf{}%
+		\fancyfoot[R]{}%
+}
+
+\setlength{\tabcolsep}{3pt}
+
+% Entornos de 'teorema'
+\usepackage[thmmarks]{ntheorem}
+{	% Definiciones
+	\theoremstyle{change}
+	\theoremindent.5cm
+	\theoremheaderfont{\LibertinusSerifOsF\upshape\scshape}
+	\theorembodyfont{\normalfont}
+	\newtheorem{defi}{definición}[section]
+	\newtheorem{teo}{teorema}[section]
+	\newtheorem{cor}{corolario}[section]
+	\newtheorem{prop}{proposición}[section]
+	\newtheorem{lem}{lema}[section]
+}
+{	% Teoremas, Corolarios, Proposiciones, Lemas
+%	\theoremstyle{changebreak}
+%	\theoremindent.5cm
+%	\theoremseparator{.}
+%	\theoremheaderfont{\upshape\scshape}
+%	\theorembodyfont{\normalfont}
+%	\newtheorem{teo}{teorema}[section]
+%	\newtheorem{cor}{corolario}[section]
+%	\newtheorem{prop}{proposición}[section]
+%	\newtheorem{lem}{lema}[section]
+	% Ejercicios y Ejemplos
+	\theoremstyle{change}
+	\theorembodyfont{\normalfont}
+	\theoremheaderfont{\upshape}
+	\newtheorem{ejem}{Ejemplo}[section]
+	\newtheorem{ejer}{Ejercicio}[section]
+	\newtheorem{cejem}{Contraejemplo}[section]
+}
+{	% Soluciones (de los ejericicos), Observaciones y demostraciones
+	\theoremstyle{nonumberplain}
+	\theoremindent0cm
+	\theoremheaderfont{\itshape}
+	\theorembodyfont{\normalfont}
+	\theoremseparator{.}
+	\newtheorem{sol}{Solución}
+	\newtheorem{obs}{Observación}
+	\theoremsymbol{\ensuremath{\qed}}
+	\newtheorem{proof}{Demostración}
+}
+%{	% Notas en el texto
+%	\theoremstyle{nonumberplain}
+%	\theoremindent0cm
+%	\theorempreskip{.5em}
+%	\theorempostskip{.5em}
+%	\theorembodyfont{\small}
+%	\theoremheaderfont{\small}
+%	\newtheorem{nota}{\adforn{33}}
+%}
+
+\newcommand{\clase}[3]{
+	\begin{flushright}
+		\itshape Clase #1, #2 #3
+	\end{flushright}
+}
+
+% Notas al pie se resetan por seccion
+\makeatletter
+\@addtoreset{footnote}{section}
+\makeatother
+
+% Macros (Atajos)
+\newcommand{\inte}[4]{\int_{#1}^{#2} #3\, d#4}
+\newcommand{\id}[1]{\mathfrak{#1}}
+\newcommand{\an}[1]{\mathbb{#1}}
+\newcommand{\ve}[1]{\bm{#1}}
+\newcommand{\vcsp}[1]{\mathbb{#1}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Mn}[1]{\vcsp M_{n\t n}(\vcsp #1^n)}
+\newcommand{\norm}{\lVert\phantom{a}\rVert}
+\newcommand{\Norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\iprod}{\langle\phantom{x},\phantom{x}\rangle}
+\newcommand{\Iprod}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\Bform}{(\phantom{a},\phantom{a})}
+\newcommand{\bform}[2]{(#1,#2)}
+\newcommand{\inv}{^{-1}}
+\newcommand{\ort}{^\perp}
+\renewcommand{\t}{\times}
+\newcommand{\dt}[2]{#1_1 #2 #1_2 #2 \dots #2 #1_n}
+\newcommand{\Dt}[2]{(#1_1+#2_1)^2 + \dots + (#1_n+#2_n)^2}
+\newcommand{\pd}[1]{\frac{\partial}{\partial #1}}
+\newcommand{\pdd}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\pds}[2]{\dfrac{\partial^2 #1}{\partial #2^2}} 
+\newcommand{\pdx}[3]{\dfrac{\partial^2 #1}{\partial #2 \partial #3}}
+\newcommand{\der}[1]{\frac{d}{d#1}}
+\newcommand{\pol}[1]{#1_n x^n + #1_{n-1} x^{n-1} + \dots + #1_1 x + #1_0}
+\newcommand{\Zn}{\mathbb{Z}/n\mathbb{Z}}
+\newcommand{\Rn}{\mathbb{R}^n}
+\newcommand{\Fn}{\mathbb{F}^n}
+\newcommand{\Cn}{\mathbb{C}^n}
+\newcommand{\Rm}{\mathbb{R}^m}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Co}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Ha}{\mathbb{H}}
+\newcommand{\ihat}{\mathbb i}
+\newcommand{\jhat}{\mathbb j}
+\newcommand{\khat}{\mathbb k}
+\DeclareMathOperator{\car}{car}
+\DeclareMathOperator{\area}{\acute area}
+\DeclareMathOperator{\traz}{tr}
+\DeclareMathOperator{\gen}{gen}
