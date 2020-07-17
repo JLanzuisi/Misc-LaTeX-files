@@ -1,6 +1,7 @@
 tlcheck*
 Universidad
 Roberts-Book-LaTeX-Files
+*.synctex.gz
 *.tmp
 *.ptc
 *.xmpi
