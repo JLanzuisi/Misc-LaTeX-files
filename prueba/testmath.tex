@@ -39,10 +39,10 @@
 %%% ====================================================================
 \NeedsTeXFormat{LaTeX2e}% LaTeX 2.09 can't be used (nor non-LaTeX)
 [1994/12/01]% LaTeX date must December 1994 or later
-\documentclass[draft,fleqn,leqno,11pt]{article}
+\documentclass[draft,fleqn,leqno,10pt]{article}
 \pagestyle{headings}
 \usepackage{amsthm}
-\usepackage{titlesec}
+\usepackage[explicit]{titlesec}
 %\usepackage[spanish]{babel}% load before XCharter
 \usepackage{blindtext}
 %\usepackage{unicode-math}
@@ -424,17 +424,82 @@
 % Latex BOLD renders with ebgaramond semibold
 \usepackage{amsmath}
 \usepackage{unicode-math} 
-\setmainfont[
-Numbers={OldStyle,Proportional},
-% Scale=.95,
-% SmallCapsFont=* Caps,
-]{EB Garamond}
-\defaultfontfeatures{SmallCapsFeatures={LetterSpace=10},Scale=MatchLowercase,Numbers={OldStyle,Proportional}}
-\newfontfamily{\serifpro}{Latin Modern Sans}
-% \setsansfont[StylisticSet={1,3}]{Work Sans}
-% \setmonofont{JetBrains Mono}
-\setmathfont{Latin Modern Math}
-\setmathfont[range={cal,frak}]{Neo Euler}
+%\setmainfont[
+%Path={../lmodernFonts/},
+%UprightFont={*-regular.otf},
+%UprightFeatures={%
+%	   SmallCapsFont={lmromancaps10-regular.otf},
+%	   SizeFeatures={%
+%		   {Size=     -5.5,  Font={lmroman5-regular.otf}},%
+%		   {Size=  5.5-6.5,  Font={lmroman6-regular.otf}},%
+%		   {Size=  6.5-7.5,  Font={lmroman7-regular.otf}},%
+%		   {Size=  7.5-8.5,  Font={lmroman8-regular.otf}},%
+%		   {Size=  8.5-9.5,  Font={lmroman9-regular.otf}},%
+%		   {Size=  9.5-11.5, Font={lmroman10-regular.otf}},%
+%		   {Size= 11.5-14.5, Font={lmroman12-regular.otf}},%
+%		   {Size= 14.5-    , Font={lmroman17-regular.otf}}%
+%	   }%
+%   },%
+%   %
+%BoldFont={lmroman10-bold.otf},
+%BoldFeatures={%
+%	   SizeFeatures={%
+%		   {Size=     -5.5,  Font={lmroman5-bold.otf}},%
+%		   {Size=  5.5-6.5,  Font={lmroman6-bold.otf}},%
+%		   {Size=  6.5-7.5,  Font={lmroman7-bold.otf}},%
+%		   {Size=  7.5-8.5,  Font={lmroman8-bold.otf}},%
+%		   {Size=  8.5-9.5,  Font={lmroman9-bold.otf}},%
+%		   {Size=  9.5-11.5, Font={lmroman10-bold.otf}},%
+%		   {Size= 11.5-    , Font={lmroman12-bold.otf}},%
+%	   }%
+%   },%
+%ItalicFont={lmroman10-italic.otf},
+%ItalicFeatures={%
+%	SizeFeatures={%
+%		{Size=     -7.5,  Font={lmroman7-italic.otf}},%
+%		{Size=  7.5-8.5,  Font={lmroman8-italic.otf}},%
+%		{Size=  8.5-9.5,  Font={lmroman9-italic.otf}},%
+%		{Size=  9.5-11.5, Font={lmroman10-italic.otf}},%
+%		{Size= 11.5-    , Font={lmroman12-italic.otf}}%
+%	}%
+%},%
+%]{lmroman10}
+% \defaultfontfeatures{SmallCapsFeatures={LetterSpace=10},Scale=MatchLowercase}
+\setmainfont[Numbers=OldStyle, BoldFont={New Computer Modern Sans/B}]{Latin Modern Sans}
+% \newfontfamily{\serifpro}{}
+\newfontfamily{\fonttest}{Latin Modern Roman}
+\setmonofont[Scale=MatchLowercase]{Latin Modern Mono}
+\setmathfont[Scale=MatchLowercase]{NewCMMath-Book.otf}
+% \setmathfont[range={bb,scr}]{XITS Math}
+% \setmathfont[Scale=1,range={"0000-"0001,"0020-"002F,"003A-"0040,"005B-"0060,"007B-"007E,
+%                     "00A0,"00A7-"00A8,"00AC,"00AF,"00B1,"00B4-"00B5,"00B7,
+%                     "00D7,"00F7,
+%                     "0131,
+%                     "0237,"02C6-"02C7,"02D8-"02DA,"02DC,
+%                     "0300-"030C,"030F,"0311,"0323-"0325,"032E-"0332,"0338,
+%                     "0391-"0393,"0395-"03A1,"03A3-"03A8,"03B1-"03BB,
+%                     "03BD-"03C1,"03C3-"03C9,"03D1,"03D5-"03D6,"03F5,
+%                     "2016,"2018-"2019,"2021,"2026-"202C,"2032-"2037,"2044,
+%                     "2057,"20D6-"20D7,"20DB-"20DD,"20E1,"20EE-"20EF,
+%                     "210B-"210C,"210E-"2113,"2118,"211B-"211C,"2126-"2128,
+%                     "212C-"212D,"2130-"2131,"2133,"2135,"2190-"2199,
+%                     "21A4,"21A6,"21A9-"21AA,"21BC-"21CC,"21D0-"21D5,
+%                     "2200,"2202-"2209,"220B-"220C,"220F-"2213,"2215-"221E,
+%                     "2223,"2225,"2227-"222E,"2234-"2235,"2237-"223D,
+%                     "2240-"224C,"2260-"2269,"226E-"2279,"2282-"228B,"228E,
+%                     "2291-"2292,"2295-"2299,"22A2-"22A5,"22C0-"22C5,
+%                     "22DC-"22DD,"22EF,"22F0-"22F1,
+%                     "2308-"230B,"2320-"2321,"2329-"232A,"239B-"23AE,
+%                     "23DC-"23DF,
+%                     "27E8-"27E9,"27F5-"27FE,"2A0C,"2B1A,
+%                     "1D400-"1D433,"1D49C,"1D49E-"1D49F,"1D4A2,"1D4A5-"1D4A6,
+%                     "1D4A9-"1D4AC,"1D4AE-"1D4B5,"1D4D0-"1D4E9,"1D504-"1D505,
+%                     "1D507-"1D50A,"1D50D-"1D514,"1D516-"1D51C,"1D51E-"1D537,
+%                     "1D56C-"1D59F,"1D6A8-"1D6B8,"1D6BA-"1D6D2,"1D6D4-"1D6DD,
+%                     "1D6DF,"1D6E1,"1D7CE-"1D7D7
+%                    }]{Neo Euler}
+% \setmathfont[Scale=MatchLowercase,range={cal,frak,it/{Greek,greek},up/{latin,Latin,num,Greek,greek}}]{Neo Euler}
+% \setmathfont[Scale=1,range={\setminus,bb,scr}]{TeX Gyre Pagella Math}
 % \usepackage[notext,notextcomp,sfmathbb,uprightgreeks,partialup]{kpfonts} 
 % \usepackage[]{mathabx} 
 % \usepackage[italic,LGRgreek]{mathastext} 
@@ -445,7 +510,7 @@ Numbers={OldStyle,Proportional},
 % \usepackage[bb=boondox,cal=cm,scr=boondoxo]{mathalfa} 
 \frenchspacing
 \setlength{\parindent}{1em}
-\linespread{1.03}
+\linespread{1.06}
 %\RequirePackage[T1]{fontenc}
 % \RequirePackage[utf8]{inputenc}
 % \RequirePackage{textcomp,mweights}
@@ -491,10 +556,10 @@ Numbers={OldStyle,Proportional},
 %\DeclareMathSymbol{\sum}{\mathop}{symbols}{"50}
 %\frenchspacing
 \titleformat{\section}
-{\raggedright\large\serifpro}
-{\thesection}
+{\raggedright\fonttest\bfseries}
+{\hspace{-3em}\thesection}
 {.5em}
-{}
+{\addfontfeatures{LetterSpace=8}\MakeUppercase{#1}}
 \title{Sample Paper for the \pkg{amsmath} Package\\
 File name: \fn{testmath.tex}}
 \author{American Mathematical Society}
@@ -599,7 +664,7 @@ This paper contains examples of various features from \AmS-\LaTeX{}.
 \section{Enumeration oof Hamiltonian paths in a graph Va Ve}
 
 \textsc{holí 1.3.2}1.3.2  \oldstylenums{1936} fi$(fg)$ $\{fg\}$. \textit{R}$R$ 
-The{\fontfamily{cmr}\selectfont a} resulting $Jforall\mathbf{A}A$ formula talsok gfi$f$ involves the $f(x)=y$ determinant $A$ and permanent, but
+% The{\fontfamily{cmr}\selectfont a} resulting $Jforall\mathbf{A}A$ formula talsok gfi$f$ involves the $f(x)=y$ determinant $A$ and permanent, but
 %it can $aabx$ easily be $\mathfrak{aa}$applied to $K_n$ and $K_{n_1n_2}$. } x$x$\textit{a}a$x$\texttt{a}\textsf{A}A$\mathsf{A}$\\
 
 {\itshape a$a$b$b$c$c$d$d$e$e$f$f$g$g$h$h$i$i$j$j$k$k$l$l$m$m$n$n$o$o$p$p$q$q$r$r$s$s$t$t$u$u$v$v$w$w$x$x$y$y$z$z$}\\
@@ -610,13 +675,13 @@ $ABCDEFGHKLMQRSWZ$\\
 
 {\textsf{T}Tengo una casita, \textsf{\fontseries{l}\selectfont mia}, \textsf{\fontseries{l}\selectfont x}rosada y la quiero mucho  \\}
 
-\textsf{Tengo una casita rosada y la quiero mucho} \\ 2$x^2$ a$x^{a^2}$
+\textit{\texttt{function()}}. una prueba {\footnotesize \addfontfeatures{LetterSpace=8} UNA PRUEBA} una prueba
 
 Let $\mathbf{A}=(a_{ij})$ be $\lim  a$ the $\mathcal{T}_c\setminus$adjacency matrix of graph $G$. The
 espacio vectorial $\mathsf{V}$ corresponding $\boldmath{a}$ \textsc{Kfirchhoff} matrix $\mathbf{K}=(k_{ij})$ is obtained from
 $\mathbf{A}$ by \textsc{fi ff fl} replacing $A$ in $-\mathbf{A}$ each diagonal $ABCD$ entry by the
 degree of its \textit{aaa} \uppercase{corresponding} \textsf{hla} vertex; i.e., the $i$th diagonal entry is $A$\textit{A	}
-%identified $ABCD$ with the \textsf{degree} of the $i$th vertex. It is $\mathsfup{A}\symsf{A}\mathsf{A}$ well known that\\ $\mathbb{RQCN} A\mathcal{APXQR}\mathscr{APXQR}$ \\
+identified $ABCD$ with the \textsf{degree} of the $i$th vertex. It is $\mathsfup{A}\symsf{A}\mathsf{A}$ well known that\\ $\mathbb{RQCN} A\mathcal{APXQR}\mathscr{APXQR}$ \\
 %Un ideal a$\mathfrak{abcdefghijklmnopqrstuvwxyz\; ABCDEF \; 01234567}$ de $\mathsf{ARIJ}$
 
 %\pagebreak
@@ -944,11 +1009,12 @@ weaker than one-way functions: $\phi(f(x))$
 The existence of informationally one-way functions
 implies the existence of one-way functions.
 \end{thm}
-We will stick to the convention introduced above of saying
+
+{\noindent\narrower\fontsize{7.5}{7.5}\selectfont We will stick to the convention introduced above of saying
 ``non-uniform'' before the theorem statement when the theorem
 makes use of non-uniformity. It should be understood that
 if nothing is said then the result holds for both the uniform and
-the non-uniform models.
+the non-uniform models.}
 
 It now follows from \thmref{th-info-ow-ow} that
 
