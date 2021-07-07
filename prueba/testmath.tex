@@ -423,7 +423,12 @@
 %\usepackage[charter,subscriptcorrection,scaled=1.07]{newtxmath}
 % Latex BOLD renders with ebgaramond semibold
 \usepackage{amsmath}
-\usepackage{unicode-math} 
+\usepackage{unicode-math}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont[StylisticSet={1,2}]{League Spartan}
+\newfontfamily{\light}[StylisticSet={1,2}]{League Spartan Light}
+\setmonofont[Scale=MatchLowercase]{Source Code Pro}
+\setmathfont[Scale=.85]{TeX Gyre DejaVu Math}
 %\setmainfont[
 %Path={../lmodernFonts/},
 %UprightFont={*-regular.otf},
@@ -465,11 +470,6 @@
 %},%
 %]{lmroman10}
 % \defaultfontfeatures{SmallCapsFeatures={LetterSpace=10},Scale=MatchLowercase}
-\setmainfont[Numbers=OldStyle, BoldFont={New Computer Modern Sans/B}]{Latin Modern Sans}
-% \newfontfamily{\serifpro}{}
-\newfontfamily{\fonttest}{Latin Modern Roman}
-\setmonofont[Scale=MatchLowercase]{Latin Modern Mono}
-\setmathfont[Scale=MatchLowercase]{NewCMMath-Book.otf}
 % \setmathfont[range={bb,scr}]{XITS Math}
 % \setmathfont[Scale=1,range={"0000-"0001,"0020-"002F,"003A-"0040,"005B-"0060,"007B-"007E,
 %                     "00A0,"00A7-"00A8,"00AC,"00AF,"00B1,"00B4-"00B5,"00B7,
@@ -555,11 +555,6 @@
 %\let\sum\relax
 %\DeclareMathSymbol{\sum}{\mathop}{symbols}{"50}
 %\frenchspacing
-\titleformat{\section}
-{\raggedright\fonttest\bfseries}
-{\hspace{-3em}\thesection}
-{.5em}
-{\addfontfeatures{LetterSpace=8}\MakeUppercase{#1}}
 \title{Sample Paper for the \pkg{amsmath} Package\\
 File name: \fn{testmath.tex}}
 \author{American Mathematical Society}
@@ -664,7 +659,7 @@ This paper contains examples of various features from \AmS-\LaTeX{}.
 \section{Enumeration oof Hamiltonian paths in a graph Va Ve}
 
 \textsc{holí 1.3.2}1.3.2  \oldstylenums{1936} fi$(fg)$ $\{fg\}$. \textit{R}$R$ 
-% The{\fontfamily{cmr}\selectfont a} resulting $Jforall\mathbf{A}A$ formula talsok gfi$f$ involves the $f(x)=y$ determinant $A$ and permanent, but
+% The{\fontfamily{cmr}\selectfont a} resulting $Jforall\symbf{A}A$ formula talsok gfi$f$ involves the $f(x)=y$ determinant $A$ and permanent, but
 %it can $aabx$ easily be $\mathfrak{aa}$applied to $K_n$ and $K_{n_1n_2}$. } x$x$\textit{a}a$x$\texttt{a}\textsf{A}A$\mathsf{A}$\\
 
 {\itshape a$a$b$b$c$c$d$d$e$e$f$f$g$g$h$h$i$i$j$j$k$k$l$l$m$m$n$n$o$o$p$p$q$q$r$r$s$s$t$t$u$u$v$v$w$w$x$x$y$y$z$z$}\\
@@ -677,9 +672,9 @@ $ABCDEFGHKLMQRSWZ$\\
 
 \textit{\texttt{function()}}. una prueba {\footnotesize \addfontfeatures{LetterSpace=8} UNA PRUEBA} una prueba
 
-Let $\mathbf{A}=(a_{ij})$ be $\lim  a$ the $\mathcal{T}_c\setminus$adjacency matrix of graph $G$. The
-espacio vectorial $\mathsf{V}$ corresponding $\boldmath{a}$ \textsc{Kfirchhoff} matrix $\mathbf{K}=(k_{ij})$ is obtained from
-$\mathbf{A}$ by \textsc{fi ff fl} replacing $A$ in $-\mathbf{A}$ each diagonal $ABCD$ entry by the
+Let $\symbf{A}=(a_{ij})$ be $\lim  a$ the $\mathcal{T}_c\setminus$adjacency matrix of graph $G$. The
+espacio vectorial $\mathsf{V}$ corresponding $\boldmath{a}$ \textsc{Kfirchhoff} matrix $\symbf{K}=(k_{ij})$ is obtained from
+$\symbf{A}$ by \textsc{fi ff fl} replacing $A$ in $-\symbf{A}$ each diagonal $ABCD$ entry by the
 degree of its \textit{aaa} \uppercase{corresponding} \textsf{hla} vertex; i.e., the $i$th diagonal entry is $A$\textit{A	}
 identified $ABCD$ with the \textsf{degree} of the $i$th vertex. It is $\mathsfup{A}\symsf{A}\mathsf{A}$ well known that\\ $\mathbb{RQCN} A\mathcal{APXQR}\mathscr{APXQR}$ \\
 %Un ideal a$\mathfrak{abcdefghijklmnopqrstuvwxyz\; ABCDEF \; 01234567}$ de $\mathsf{ARIJ}$
@@ -693,20 +688,20 @@ identified $ABCD$ with the \textsf{degree} of the $i$th vertex. It is $\mathsfup
 \pagebreak
 \[ e^{x^2} \]
 \begin{equation}
-\det\mathbf{K}(i|i)=\text{ the number of spanning trees of $G$},
+\det\symbf{K}(i|i)=\text{ the number of spanning trees of $G$},
 \quad i=1,\dots,n
 \end{equation}
-where $\mathbf{K}(i|i)$ is the $i$th principal submatrix of
-$\mathbf{K}$.
+where $\symbf{K}(i|i)$ is the $i$th principal submatrix of
+$\symbf{K}$.
 \begin{verbatim}
-\det\mathbf{K}(i|i)=\text{ the number of spanning trees of $G$},
+\det\symbf{K}(i|i)=\text{ the number of spanning trees of $G$},
 \end{verbatim}
 
 { Let $C_{i(j)}$ be the set of graphs obtained $\log x \sin y$ from $G$ by attaching edge
 $(v_iv_j)$ to each spanning {spanning} tree of $G$. Denote by $C_i=\bigcap_j
 C_{i(j)}$. It is obvious that the collection fi of Hamiltonian cycles is a
 subset of $C_i$. Note that the cardinality of $C_i$ is $k_{ii}\det
-\mathbf{K}(i|i)$. Let $\wh X=\{\hat x_1,\dots,\hat x_n\}$.}
+\symbf{K}(i|i)$. Let $\wh X=\{\hat x_1,\dots,\hat x_n\}$.}
 \begin{verbatim}
 $\wh X=\{\hat x_1,\dots,\hat x_n\}$
 \end{verbatim}
@@ -720,7 +715,7 @@ k_{ij}$. Then the number of Hamiltonian cycles $H_c$ is given by the
 relation \cite{liuchow:formalsum}
 \begin{equation}\label{H-cycles}
 \biggl(\prod^n_{\,j=1}\hat x_j\biggr)H_c=\frac{1}{2}\hat k_{ij}\det
-\wh{\mathbf{K}}(i|i),\qquad i=1,\dots,n.
+\wh{\symbf{K}}(i|i),\qquad i=1,\dots,n.
 \end{equation}
 { The task here is to express \eqref{H-cycles}
 in a form free of any $\hat x_i$,
@@ -761,17 +756,17 @@ $(q,n)\le(p,n)$ if $q\le p$ and $A_{q,n}=A_{p,n}$.
 \end{verbatim}
 \end{notation}
 
-Let $\mathbf{B}=(b_{ij})$ be an $n\times n$ {\scshape matrix}. Let $\mathbf{n}=\{1,
+Let $\symbf{B}=(b_{ij})$ be an $n\times n$ {\scshape matrix}. Let $\symbf{n}=\{1,
 \dots,n\}$. Using the \textsf{properties} of \eqref{multdef}, it is readily seen
 that $\mathsf{C}$
 
 \begin{lem}\label{lem-per}
 \begin{equation}
-\prod_{i\in\mathbf{n}}
-\biggl(\sum_{\,j\in\mathbf{n}}b_{ij}\hat x_i\biggr)
-=\biggl(\prod_{\,i\in\mathbf{n}}\hat x_i\biggr)\per \mathbf{B} \int
+\prod_{i\in\symbf{n}}
+\biggl(\sum_{\,j\in\symbf{n}}b_{ij}\hat x_i\biggr)
+=\biggl(\prod_{\,i\in\symbf{n}}\hat x_i\biggr)\per \symbf{B} \int
 \end{equation}
-where $\per \mathbf{B}$ is the permanent of $\mathbf{B}$ \upshape{define}.
+where $\per \symbf{B}$ is the permanent of $\symbf{B}$ \upshape{define}.
 \end{lem}
 
 Let $\wh Y=\{\hat y_1,\dots,\hat y_n\}$. Define multiplication $\lim$
@@ -782,16 +777,16 @@ for the elements of $\wh Y$ by
 Then, it follows that
 \begin{lem}\label{lem-det}
 \begin{equation}\label{detprod}
-\prod_{i\in\mathbf{n}}
-\biggl(\sum_{\,j\in\mathbf{n}}b_{ij}\hat y_j\biggr)
-=\biggl(\prod_{\,i\in\mathbf{n}}\hat y_i\biggr)\det\mathbf{B}.
+\prod_{i\in\symbf{n}}
+\biggl(\sum_{\,j\in\symbf{n}}b_{ij}\hat y_j\biggr)
+=\biggl(\prod_{\,i\in\symbf{n}}\hat y_i\biggr)\det\symbf{B}.
 \end{equation}
 \end{lem}
 
 Note that all basic properties $A\mathscr{uvxyz}\mathcal{ABFV}\mathcal{T}_c$ of determinants are direct consequences
 of Lemma ~\ref{lem-det}. Write Va Ve We Wa
 \begin{equation}\label{sum-bij}
-\sum_{j\in\mathbf{n}}b_{ij}\hat y_j=\sum_{j\in\mathbf{n}}b^{(\lambda)}
+\sum_{j\in\symbf{n}}b_{ij}\hat y_j=\sum_{j\in\symbf{n}}b^{(\lambda)}
 _{ij}\hat y_j+(b_{ii}-\lambda_i)\hat y_i\hat y
 \end{equation}
 where
@@ -799,25 +794,25 @@ where
 b^{(\lambda)}_{ii}=\lambda_i,\quad b^{(\lambda)}_{ij}=b_{ij},
 \quad i\not=j.
 \end{equation}
-Let $\mathbf{B}^{(\lambda)}=(b^{(\lambda)}_{ij})$. By \eqref{detprod}
+Let $\symbf{B}^{(\lambda)}=(b^{(\lambda)}_{ij})$. By \eqref{detprod}
 and \eqref{sum-bij}, it is
 straightforward to show the following
 result:
 \begin{thm}\label{thm-main}
 \begin{equation}\label{detB}
-\det\mathbf{B}=
+\det\symbf{B}=
 \sum^n_{l =0}\sum_{I_l \subseteq n}
 \prod_{i\in I_l}(b_{ii}-\lambda_i)
-\det\mathbf{B}^{(\lambda)}(I_l |I_l ),
+\det\symbf{B}^{(\lambda)}(I_l |I_l ),
 \end{equation}
-where $I_l =\{i_1,\dots,i_l \}$ and $\mathbf{B}^{(\lambda)}(I_l |I_l )$
-is the principal submatrix obtained from $\mathbf{B}^{(\lambda)}$
+where $I_l =\{i_1,\dots,i_l \}$ and $\symbf{B}^{(\lambda)}(I_l |I_l )$
+is the principal submatrix obtained from $\symbf{B}^{(\lambda)}$
 by deleting its $i_1,\dots,i_l $ rows and columns.
 \end{thm}
 
 \begin{rem}
-Let $\mathbf{M}$ be an \textit{n}$n\times n$ matrix. The convention
-$\mathbf{M}(\mathbf{n}|\mathbf{n})=1$ has been used in \eqref{detB} and
+Let $\symbf{M}$ be an \textit{n}$n\times n$ matrix. The convention
+$\symbf{M}(\symbf{n}|\symbf{n})=1$ has been used in \eqref{detB} and
 hereafter. a\texttt{a}x\texttt{x}
 \end{rem}
 
@@ -826,15 +821,15 @@ hereafter. a\texttt{a}x\texttt{x}
 used to compute the coefficients of a characteristic polynomial
 \cite{mami:matrixth}:
 \begin{cor}\label{BI}
-Write $\det(\mathbf{B}-x\mathbf{I})=\sum^n_{l =0}(-1)
+Write $\det(\symbf{B}-x\symbf{I})=\sum^n_{l =0}(-1)
  q^l b_l x^l $. Then
 \begin{equation}\label{bl-sum}
-b_l =\sum_{I_l \subseteq\mathbf{n}}\det\mathbf{B}(I_l |I_l ).
+b_l =\sum_{I_l \subseteq\symbf{n}}\det\symbf{B}(I_l |I_l ).
 \end{equation}
 \end{cor}
 Let
 \begin{equation}
-\mathbf{K}(t,t_1,\dots,t_n)
+\symbf{K}(t,t_1,\dots,t_n)
 =\begin{pmatrix} D_1t&-a_{12}t_2&\dots&-a_{1n}t_n\\
 -a_{21}t_1&D_2t&\dots&-a_{2n}t_n\\
 \hdotsfor[2]{4}\\
@@ -848,55 +843,55 @@ Let
 \end{verbatim}
 where
 \begin{equation}
-D_i=\sum_{j\in\mathbf{n}}a_{ij}t_j,\quad i=1,\dots,n.
+D_i=\sum_{j\in\symbf{n}}a_{ij}t_j,\quad i=1,\dots,n.
 \end{equation}
 
 Set
 \begin{equation*}
-D(t_1,\dots,t_n)=\frac{\delta}{\delta t}\eval{\det\mathbf{K}(t,t_1,\dots,t_n)
+D(t_1,\dots,t_n)=\frac{\delta}{\delta t}\eval{\det\symbf{K}(t,t_1,\dots,t_n)
 }_{t=1}.
 \end{equation*}
 Then
 \begin{equation}\label{sum-Di}
 D(t_1,\dots,t_n)
-=\sum_{i\in\mathbf{n}}D_i\det\mathbf{K}(t=1,t_1,\dots,t_n; i|i),
+=\sum_{i\in\symbf{n}}D_i\det\symbf{K}(t=1,t_1,\dots,t_n; i|i),
 \end{equation}
-where $\mathbf{K}(t=1,t_1,\dots,t_n; i|i)$ is $a\oplus b$ the $i$th principal
-submatrix of $\mathbf{K}(t=1,t_1,\dots,t_n)$.
+where $\symbf{K}(t=1,t_1,\dots,t_n; i|i)$ is $a\oplus b$ the $i$th principal
+submatrix of $\symbf{K}(t=1,t_1,\dots,t_n)$.
 
 Theorem ~\ref{thm-main} leads to
 \begin{equation}\label{detK1}
-\det\mathbf{K}(t_1,t_1,\dots,t_n)
-=\sum_{I\in\mathbf{n}}(-1)^{\envert{I}}t^{n-\envert{I}}
-\prod_{i\in I}t_i\prod_{j\in I}(D_j+\lambda_jt_j)\det\mathbf{A}
+\det\symbf{K}(t_1,t_1,\dots,t_n)
+=\sum_{I\in\symbf{n}}(-1)^{\envert{I}}t^{n-\envert{I}}
+\prod_{i\in I}t_i\prod_{j\in I}(D_j+\lambda_jt_j)\det\symbf{A}
 ^{(\lambda t)}(\overline{I}|\overline I).
 \end{equation}
 Note that
 \begin{equation}\label{detK2}
-\det\mathbf{K}(t=1,t_1,\dots,t_n)=\sum_{I\in\mathbf{n}}(-1)^{\envert{I}}
-\prod_{i\in I}t_i\prod_{j\in I}(D_j+\lambda_jt_j)\det\mathbf{A}
+\det\symbf{K}(t=1,t_1,\dots,t_n)=\sum_{I\in\symbf{n}}(-1)^{\envert{I}}
+\prod_{i\in I}t_i\prod_{j\in I}(D_j+\lambda_jt_j)\det\symbf{A}
 ^{(\lambda)}(\overline{I}|\overline{I})=0.
 \end{equation}
 
 Let $t_i=\hat x_i,i=1,\dots,n$. Lemma ~\ref{lem-per} yields
 \begin{multline}
-\biggl(\sum_{\,i\in\mathbf{n}}a_{l _i}x_i\biggr)
-\det\mathbf{K}(t=1,x_1,\dots,x_n;l |l )\\
-=\biggl(\prod_{\,i\in\mathbf{n}}\hat x_i\biggr)
-\sum_{I\subseteq\mathbf{n}-\{l \}}
-(-1)^{\envert{I}}\per\mathbf{A}^{(\lambda)}(I|I)
-\det\mathbf{A}^{(\lambda)}
+\biggl(\sum_{\,i\in\symbf{n}}a_{l _i}x_i\biggr)
+\det\symbf{K}(t=1,x_1,\dots,x_n;l |l )\\
+=\biggl(\prod_{\,i\in\symbf{n}}\hat x_i\biggr)
+\sum_{I\subseteq\symbf{n}-\{l \}}
+(-1)^{\envert{I}}\per\symbf{A}^{(\lambda)}(I|I)
+\det\symbf{A}^{(\lambda)}
 (\overline I\cup\{l \}|\overline I\cup\{l \}).
 \label{sum-ali}
 \end{multline}
 \begin{verbatim}
 \begin{multline}
-\biggl(\sum_{\,i\in\mathbf{n}}a_{l _i}x_i\biggr)
-\det\mathbf{K}(t=1,x_1,\dots,x_n;l |l )\\
-=\biggl(\prod_{\,i\in\mathbf{n}}\hat x_i\biggr)
-\sum_{I\subseteq\mathbf{n}-\{l \}}
-(-1)^{\envert{I}}\per\mathbf{A}^{(\lambda)}(I|I)
-\det\mathbf{A}^{(\lambda)}0
+\biggl(\sum_{\,i\in\symbf{n}}a_{l _i}x_i\biggr)
+\det\symbf{K}(t=1,x_1,\dots,x_n;l |l )\\
+=\biggl(\prod_{\,i\in\symbf{n}}\hat x_i\biggr)
+\sum_{I\subseteq\symbf{n}-\{l \}}
+(-1)^{\envert{I}}\per\symbf{A}^{(\lambda)}(I|I)
+\det\symbf{A}^{(\lambda)}0
 (\overline I\cup\{l \}|\overline I\cup\{l \}).
 \label{sum-ali}
 \end{multline}
@@ -910,7 +905,7 @@ D_{l},
 \end{equation}
 where
 \begin{equation}\label{delta-l}
-D_{l}=\eval[2]{\sum_{I_{l}\subseteq \mathbf{n}}
+D_{l}=\eval[2]{\sum_{I_{l}\subseteq \symbf{n}}
 D(t_1,\dots,t_n)}_{t_i=\left\{\begin{smallmatrix}
 0,& \text{if }i\in I_{l}\quad\\% \quad added for centering
 1,& \text{otherwise}\end{smallmatrix}\right.\;,\;\; i=1,\dots,n}.
@@ -1103,7 +1098,7 @@ the domain where the function $\Phi_ 0$ is defined.
 when $(1-2a)\delta<\abs{z-z_\nu}<(1-a)\delta$.
 \end{enumerate}
 Let $A_\nu$ denote the annulus $A_\nu=\{(1-2a)\delta<\abs{z-z_\nu}<(1-a)
-\delta \}$, and $\mathbf{A}{a}$ set $A=\bigcup_\nu A_\nu$. The
+\delta \}$, and $\symbf{A}{a}$ set $A=\bigcup_\nu A_\nu$. The
 properties (\ref{d:over}) and (\ref{d:ad}) of $\Phi_ 0$
 may be summarized as $\Delta_0\ln \Phi_ 0\geq c_3\delta^{-2}\chi_A$,
 where $\chi _A$ is the characteristic function of $A$.
@@ -1234,8 +1229,8 @@ of chambers is determined by the Poincar\'e
 polynomial as follows.
 
 \begin{thm}\label{th-realarr}
-Let $\A_{\mathbf{R}}$ be a real arrangement. Then
-\[ \abs{\Cham(\A_{\mathbf{R}})} = \pi (\A_{\mathbf{R}},1). \]
+Let $\A_{\symbf{R}}$ be a real arrangement. Then
+\[ \abs{\Cham(\A_{\symbf{R}})} = \pi (\A_{\symbf{R}},1). \]
 \end{thm}
 
 \begin{proof}
@@ -1326,17 +1321,17 @@ $y\in\SY$.
 
 We can now prove a continuity theorem.
 \begin{thm}\label{t:conl}
-Let $\Omega \subset\mathbf{R}^n$ be an open set, let
-$u\in BV(\Omega ;\mathbf{R}^m)$, and let
+Let $\Omega \subset\symbf{R}^n$ be an open set, let
+$u\in BV(\Omega ;\symbf{R}^m)$, and let
 \begin{equation}\label{quts}
-T^u_x=\left\{y\in\mathbf{R}^m:
+T^u_x=\left\{y\in\symbf{R}^m:
  y=\tilde u(x)+\left\langle \frac{Du}{\abs{Du}}(x),z
-\right\rangle \text{ for some }z\in\mathbf{R}^n\right\}
+\right\rangle \text{ for some }z\in\symbf{R}^n\right\}
 \end{equation}
-for every $x\in\Omega \backslash S_u$. Let $f\colon \mathbf{R}^m\to
-\mathbf{R}^k$ be a Lipschitz continuous function such that $f(0)=0$, and
-let $v=f(u)\colon \Omega \to \mathbf{R}^k$. Then $v\in BV(\Omega
-;\mathbf{R}^k)$ and
+for every $x\in\Omega \backslash S_u$. Let $f\colon \symbf{R}^m\to
+\symbf{R}^k$ be a Lipschitz continuous function such that $f(0)=0$, and
+let $v=f(u)\colon \Omega \to \symbf{R}^k$. Then $v\in BV(\Omega
+;\symbf{R}^k)$ and
 \begin{equation}
 Jv=\eval{(f(u^+)-f(u^-))\otimes \nu_u\cdot\,
 \mathcal{H}_{n-1}}_{S_u}.
@@ -1357,33 +1352,33 @@ be a continuous function such that $\omega (t)\to 0$ as $t\to
 0$. Then
 \[\lim_{h\to 0^+}g(\omega(h))=L\Leftrightarrow\lim_{h\to
 0^+}g(h)=L\]
-for any function $g\colon \left]0,+\infty\right[\to \mathbf{R}$.
+for any function $g\colon \left]0,+\infty\right[\to \symbf{R}$.
 \end{rem}
 \begin{rem}\label{r:dif}
-Let $h \colon  \mathbf{R}^n\to \mathbf{R}$ be a Lipschitz
+Let $h \colon  \symbf{R}^n\to \symbf{R}$ be a Lipschitz
 continuous function and assume that
 \[L(z)=\lim_{h\to 0^+}\frac{g(hz)-g(0)}h\]
-exists for every $z\in\mathbf{Q}^n$ and that $L$ is a linear function of
+exists for every $z\in\symbf{Q}^n$ and that $L$ is a linear function of
 $z$. Then $g$ is differentiable at 0.
 \end{rem}
 \begin{rem}\label{r:dif0}
-Let $A \colon \mathbf{R}^n\to \mathbf{R}^m$ be a linear function, and
-let $f \colon \mathbf{R}^m\to \mathbf{R}$ be a function. Then the
+Let $A \colon \symbf{R}^n\to \symbf{R}^m$ be a linear function, and
+let $f \colon \symbf{R}^m\to \symbf{R}$ be a function. Then the
 restriction of $f$ to the range of $A$ is differentiable at 0 if and
-only if $f(A)\colon \mathbf{R}^n\to \mathbf{R}$ is differentiable at 0
+only if $f(A)\colon \symbf{R}^n\to \symbf{R}$ is differentiable at 0
 and
 \[\nabla(\eval{f}_{\IM(A)})(0)A=\nabla (f(A))(0).\]
 \end{rem}
 
 \begin{proof}
- We begin by showing that $v\in BV(\Omega;\mathbf{R}^k)$ and
+ We begin by showing that $v\in BV(\Omega;\symbf{R}^k)$ and
 \begin{equation}\label{e:bomb}
-\abs{Dv}(B)\le K\abs{Du}(B)\qquad\forall B\in\mathbf{B}(\Omega ),
+\abs{Dv}(B)\le K\abs{Du}(B)\qquad\forall B\in\symbf{B}(\Omega ),
 \end{equation}
 where $K>0$ is the Lipschitz constant of $f$. By \eqref{sum-Di} and by
 the approximation result quoted in \secref{s:mt}, it is possible to find
-a sequence $(u_h)\subset C^1(\Omega ;\mathbf{R}^m)$ converging to $u$ in
-$L^1(\Omega ;\mathbf{R}^m)$ and such that
+a sequence $(u_h)\subset C^1(\Omega ;\symbf{R}^m)$ converging to $u$ in
+$L^1(\Omega ;\symbf{R}^m)$ and such that
 \[\lim_{h\to +\infty}\int_\Omega \abs{\nabla u_h}\,dx=\abs{Du}(\Omega ).\]
 The functions $v_h=f(u_h)$ are locally Lipschitz continuous in $\Omega
 $, and the definition of differential implies that $\abs{\nabla v_h}\le
@@ -1398,9 +1393,9 @@ of the total variation and \eqref{sum-Di} yield
 \end{split}\end{equation}
 Since $f(0)=0$, we have also
 \[\int_\Omega \abs{v}\,dx\le K\int_\Omega \abs{u}\,dx;\]
-therefore $u\in BV(\Omega ;\mathbf{R}^k)$. Repeating the same argument
+therefore $u\in BV(\Omega ;\symbf{R}^k)$. Repeating the same argument
 for every open set $A\subset\Omega $, we get \eqref{e:bomb} for every
-$B\in\mathbf{B}(\Omega)$, because $\abs{Dv}$, $\abs{Du}$ are Radon measures. To
+$B\in\symbf{B}(\Omega)$, because $\abs{Dv}$, $\abs{Du}$ are Radon measures. To
 prove \lemref{limbog}, first we observe that
 \begin{equation}\label{e:SS}
 S_v\subset S_u,\qquad\tilde v(x)=f(\tilde u(x))\qquad \forall x\in\Omega
@@ -1450,21 +1445,21 @@ singular part with respect to $\abs{\wt{D} u}$. By
 \frac{Du(\interval{\left[t,s\right[})}
 {\abs{\wt{D}u}(\interval{\left[t,s\right[})}
 \end{equation*}
-$\abs{\wt{D}u}$-almost everywhere in $\mathbf{R}$. It is well known
+$\abs{\wt{D}u}$-almost everywhere in $\symbf{R}$. It is well known
 (see, for instance, \cite[2.5.16]{ste:sint}) that every one-dimensional
 function of bounded variation $w$ has a unique left continuous
 representative, i.e., a function $\hat w$ such that $\hat w=w$ almost
 everywhere and $\lim_{s\to t^-}\hat w(s)=\hat w(t)$ for every $t\in
-\mathbf{R}$. These conditions imply
+\symbf{R}$. These conditions imply
 \begin{equation}
 \hat u(t)=Du(\interval{\left]-\infty,t\right[}),
 \qquad \hat v(t)=Dv(\interval{\left]-\infty,t\right[})\qquad
-\forall t\in\mathbf{R}
+\forall t\in\symbf{R}
 \end{equation}
 and
 \begin{equation}\label{alimo}
-\hat v(t)=f(\hat u(t))\qquad\forall t\in\mathbf{R}.\end{equation}
-Let $t\in\mathbf{R}$ be such that
+\hat v(t)=f(\hat u(t))\qquad\forall t\in\symbf{R}.\end{equation}
+Let $t\in\symbf{R}$ be such that
 $\abs{\wt{D}u}(\interval{\left[t,s\right[})>0$ for every $s>t$ and
 assume that the limits in \eqref{joe} exist. By \eqref{j:mark} and
 \eqref{far-d} we get
@@ -1501,32 +1496,32 @@ converges to 0 as $s\downarrow t$. Therefore Remark~\ref{r:omb} and the
 previous inequality imply
 \[\frac{\wt{D}v}{\abs{\wt{D}u}}(t)=\lim_{h\to 0^+}
 \frac{f(\hat u(t)+h\dfrac{\wt{D}u}{\abs{\wt{D}u}}
-(t))-f(\hat u(t))}h\quad\abs{\wt{D}u}\text{-a.e. in }\mathbf{R}.\]
+(t))-f(\hat u(t))}h\quad\abs{\wt{D}u}\text{-a.e. in }\symbf{R}.\]
 By \eqref{joe}, $\hat u(x)=\tilde u(x)$ for every
-$x\in\mathbf{R}\backslash S_u$; moreover, applying the same argument to
+$x\in\symbf{R}\backslash S_u$; moreover, applying the same argument to
 the functions $u'(t)=u(-t)$, $v'(t)=f(u'(t))=v(-t)$, we get
 \[\frac{\wt{D}v}{\abs{\wt{D}u}}(t)=\lim_{h\to 0}
 \frac{f(\tilde u(t)
 +h\dfrac{\wt{D}u}{\abs{\wt{D}u}}(t))-f(\tilde u(t))}{h}
-\qquad\abs{\wt{D}u}\text{-a.e. in }\mathbf{R}\]
+\qquad\abs{\wt{D}u}\text{-a.e. in }\symbf{R}\]
 and our statement is proved.
 
 \subsection*{Step 2}
 
-Let us consider now the general case $n>1$. Let $\nu\in \mathbf{R}^n$ be
-such that $\abs{\nu}=1$, and let $\pi_\nu=\{y\in\mathbf{R}^n: \langle
-y,\nu\rangle =0\}$. In the following, we shall identify $\mathbf{R}^n$
-with $\pi_\nu\times\mathbf{R}$, and we shall denote by $y$ the variable
-ranging in $\pi_\nu$ and by $t$ the variable ranging in $\mathbf{R}$. By
+Let us consider now the general case $n>1$. Let $\nu\in \symbf{R}^n$ be
+such that $\abs{\nu}=1$, and let $\pi_\nu=\{y\in\symbf{R}^n: \langle
+y,\nu\rangle =0\}$. In the following, we shall identify $\symbf{R}^n$
+with $\pi_\nu\times\symbf{R}$, and we shall denote by $y$ the variable
+ranging in $\pi_\nu$ and by $t$ the variable ranging in $\symbf{R}$. By
 the just proven one-dimensional result, and by \thmref{thm-main}, we get
 \[\lim_{h\to 0}\frac{f(\tilde u(y+t\nu)+h\dfrac{\wt{D}u_y}{\abs{
 \wt{D}u_y}}(t))-f(\tilde u(y+t\nu))}h=\frac{\wt{D}v_y}{\abs{
-\wt{D}u_y}}(t)\qquad\abs{\wt{D}u_y}\text{-a.e. in }\mathbf{R}\]
+\wt{D}u_y}}(t)\qquad\abs{\wt{D}u_y}\text{-a.e. in }\symbf{R}\]
 for $\mathcal{H}_{n-1}$-almost every $y\in \pi_\nu$. We claim that
 \begin{equation}
 \frac{\langle \wt{D}u,\nu\rangle }{\abs{\langle \wt{D}u,\nu\rangle
 }}(y+t\nu)=\frac{\wt{D}u_y}
-{\abs{\wt{D}u_y}}(t)\qquad\abs{\wt{D}u_y}\text{-a.e. in }\mathbf{R}
+{\abs{\wt{D}u_y}}(t)\qquad\abs{\wt{D}u_y}\text{-a.e. in }\symbf{R}
 \end{equation}
 for $\mathcal{H}_{n-1}$-almost every $y\in\pi_\nu$. In fact, by
 \eqref{sum-ali} and \eqref{delta-l} we get
@@ -1544,7 +1539,7 @@ is possible to prove that
 \begin{equation}
 \frac{\langle \wt{D}v,\nu\rangle }{\abs{\langle \wt{D}u,\nu\rangle
 }}(y+t\nu)=\frac{\wt{D}v_y}{\abs{\wt{D}u_y}}(t)\qquad\abs{
-\wt{D}u_y}\text{-a.e. in }\mathbf{R}\end{equation}
+\wt{D}u_y}\text{-a.e. in }\symbf{R}\end{equation}
 for $\mathcal{H}_{n-1}$-almost every $y\in \pi_\nu$. By \eqref{far-d}
 and \eqref{E_SXgYy} we get
 \[
@@ -1561,7 +1556,7 @@ for $\mathcal{H}_{n-1}$-almost every $y\in\pi_\nu$, and using again
 u(x))}{h}=\frac{\langle \wt{D}v,\nu\rangle }{\abs{\langle \wt{D}u,\nu
 \rangle }}(x)
 \]
-$\abs{\langle \wt{D}u,\nu\rangle}$-a.e. in $\mathbf{R}^n$.
+$\abs{\langle \wt{D}u,\nu\rangle}$-a.e. in $\symbf{R}^n$.
 
 Since the function $\abs{\langle \wt{D}u,\nu\rangle }/\abs{\wt{D}u}$
 is strictly positive $\abs{\langle \wt{D}u,\nu\rangle }$-almost everywhere,
@@ -1574,7 +1569,7 @@ u,\nu\rangle }{\abs{\langle \wt{D}u,\nu\rangle }}(x))-f(\tilde u(x))}{h}\\
 {\langle \wt{D}v,\nu\rangle }{\abs{\langle
 \wt{D}u,\nu\rangle }}(x)
 \end{multline*}
-$\abs{\langle \wt{D}u,\nu\rangle }$-almost everywhere in $\mathbf{R}^n$.
+$\abs{\langle \wt{D}u,\nu\rangle }$-almost everywhere in $\symbf{R}^n$.
 
 Finally, since
 \begin{align*}
@@ -1582,12 +1577,12 @@ Finally, since
 \frac{\langle \wt{D}u,\nu\rangle }{\abs{\langle \wt{D}u,\nu\rangle}}
 =\frac{\langle \wt{D}u,\nu\rangle }{\abs{\wt{D}u}}
 =\left\langle \frac{\wt{D}u}{\abs{\wt{D}u}},\nu\right\rangle
-        \qquad\abs{\wt{D}u}\text{-a.e. in }\mathbf{R}^n\\
+        \qquad\abs{\wt{D}u}\text{-a.e. in }\symbf{R}^n\\
 &\frac{\abs{\langle \wt{D}u,\nu\rangle }}{\abs{\wt{D}u}}
 \frac{\langle \wt{D}v,\nu\rangle }{\abs{\langle \wt{D}u,\nu\rangle}}
 =\frac{\langle \wt{D}v,\nu\rangle }{\abs{\wt{D}u}}
 =\left\langle \frac{\wt{D}v}{\abs{\wt{D}u}},\nu\right\rangle
-        \qquad\abs{\wt{D}u}\text{-a.e. in }\mathbf{R}^n
+        \qquad\abs{\wt{D}u}\text{-a.e. in }\symbf{R}^n
 \end{align*}
 and since both sides of \eqref{alimo}
 are zero $\abs{\wt{D}u}$-almost everywhere
@@ -1598,23 +1593,23 @@ on $\abs{\langle \wt{D}u,\nu\rangle }$-negligible sets, we conclude that
 u}{\abs{\wt{D}u}}(x),\nu\right\rangle \right)-f(\tilde u(x))}h
 =\left\langle \frac{\wt{D}v}{\abs{\wt{D}u}}(x),\nu\right\rangle,
 \]
-$\abs{\wt{D}u}$-a.e. in $\mathbf{R}^n$.
+$\abs{\wt{D}u}$-a.e. in $\symbf{R}^n$.
 Since $\nu$ is arbitrary, by Remarks \ref{r:dif} and~\ref{r:dif0}
 the restriction of $f$ to
 the affine space $T^u_x$ is differentiable at $\tilde u(x)$ for $\abs{\wt{D}
-u}$-almost every $x\in \mathbf{R}^n$ and \eqref{quts} holds.\qed
+u}$-almost every $x\in \symbf{R}^n$ and \eqref{quts} holds.\qed
 
 It follows from \eqref{sum-Di}, \eqref{detK1}, and \eqref{detK2} that
 \begin{equation}\label{Dt}
-D(t_1,\dots,t_n)=\sum_{I\in\mathbf{n}}(-1)^{\abs{I}-1}\abs{I}
-\prod_{i\in I}t_i\prod_{j\in I}(D_j+\lambda_jt_j)\det\mathbf{A}^{(\lambda)}
+D(t_1,\dots,t_n)=\sum_{I\in\symbf{n}}(-1)^{\abs{I}-1}\abs{I}
+\prod_{i\in I}t_i\prod_{j\in I}(D_j+\lambda_jt_j)\det\symbf{A}^{(\lambda)}
 (\overline I|\overline I).
 \end{equation}
 Let $t_i=\hat x_i$, $i=1,\dots,n$. Lemma 1 leads to
 \begin{equation}\label{Dx}
-D(\hat x_1,\dots,\hat x_n)=\prod_{i\in\mathbf{n}}\hat x_i
-\sum_{I\in\mathbf{n}}(-1)^{\abs{I}-1}\abs{I}\per \mathbf{A}
-^{(\lambda)}(I|I)\det\mathbf{A}^{(\lambda)}(\overline I|\overline I).
+D(\hat x_1,\dots,\hat x_n)=\prod_{i\in\symbf{n}}\hat x_i
+\sum_{I\in\symbf{n}}(-1)^{\abs{I}-1}\abs{I}\per \symbf{A}
+^{(\lambda)}(I|I)\det\symbf{A}^{(\lambda)}(\overline I|\overline I).
 \end{equation}
 By \eqref{H-cycles}, \eqref{sum-Di}, and \eqref{Dx},
 we have the following result:
@@ -1625,8 +1620,8 @@ H_c=\frac{1}{2n}\sum^n_{l =1}l (-1)^{l -1}A_{l}
 \end{equation}
 where
 \begin{equation}\label{A-l-lambda}
-A^{(\lambda)}_l =\sum_{I_l \subseteq\mathbf{n}}\per \mathbf{A}
-^{(\lambda)}(I_l |I_l )\det\mathbf{A}^{(\lambda)}
+A^{(\lambda)}_l =\sum_{I_l \subseteq\symbf{n}}\per \symbf{A}
+^{(\lambda)}(I_l |I_l )\det\symbf{A}^{(\lambda)}
 (\overline I_{l}|\overline I_l ),\abs{I_{l}}=l .
 \end{equation}
 \end{thm}
@@ -1667,10 +1662,10 @@ H_c=\frac1{n_1+n_2}n_1!n_2!\delta_{n_1n_2}.
 
 Now, we consider an asymmetrical approach. Theorem \ref{thm-main} leads to
 \begin{multline}
-\det\mathbf{K}(t=1,t_1,\dots,t_n;l |l )\\
-=\sum_{I\subseteq\mathbf{n}-\{l \}}
+\det\symbf{K}(t=1,t_1,\dots,t_n;l |l )\\
+=\sum_{I\subseteq\symbf{n}-\{l \}}
 (-1)^{\abs{I}}\prod_{i\in I}t_i\prod_{j\in I}
-(D_j+\lambda_jt_j)\det\mathbf{A}^{(\lambda)}
+(D_j+\lambda_jt_j)\det\symbf{A}^{(\lambda)}
 (\overline I\cup\{l \}|\overline I\cup\{l \}).
 \end{multline}
 
@@ -1678,9 +1673,9 @@ By \eqref{H-cycles} and \eqref{sum-ali} we have the following asymmetrical
 result:
 \begin{thm}\label{thm-asym}
 \begin{equation}
-H_c=\frac12\sum_{I\subseteq\mathbf{n}-\{l \}}
-(-1)^{\abs{I}}\per\mathbf{A}^{(\lambda)}(I|I)\det
-\mathbf{A}^{(\lambda)}
+H_c=\frac12\sum_{I\subseteq\symbf{n}-\{l \}}
+(-1)^{\abs{I}}\per\symbf{A}^{(\lambda)}(I|I)\det
+\symbf{A}^{(\lambda)}
 (\overline I\cup\{l \}|\overline I\cup\{l \})
 \end{equation}
 which reduces to Goulden--Jackson's formula when $\lambda_i=0,i=1,\dots,n$
@@ -1694,15 +1689,15 @@ which reduces to Goulden--Jackson's formula when $\lambda_i=0,i=1,\dots,n$
 In the \pkg{amsmath} package \cn{boldsymbol} is used for getting
 individual bold math symbols and bold Greek letters---everything in
 math except for letters of the Latin alphabet,
-where you'd use \cn{mathbf}.  For example,$\mathbf{\infty}$
+where you'd use \cn{mathbf}.  For example,$\symbf{\infty}$
 \begin{verbatim}
 A_\infty + \pi A_0 \sim
-\mathbf{A}_{\boldsymbol{\infty}} \boldsymbol{+}
-\boldsymbol{\pi} \mathbf{A}_{\boldsymbol{0}}
+\symbf{A}_{\boldsymbol{\infty}} \boldsymbol{+}
+\boldsymbol{\pi} \symbf{A}_{\boldsymbol{0}}
 \end{verbatim}
 looks like this:
-\[A_\infty + \pi A_0 \sim \mathbf{A}_{\mathbf{\infty}}
-\boldsymbol{+} \mathbf{\pi} \mathbf{A}_{\mathbf{0}}\]
+\[A_\infty + \pi A_0 \sim \symbf{A}_{\symbf{\infty}}
+\boldsymbol{+} \symbf{\pi} \symbf{A}_{\symbf{0}}\]
 
 \subsection{``Poor man's bold''}
 \textsc{definition} If a bold version of a particular symbol doesn't exist in the
@@ -1895,10 +1890,10 @@ Examples:
 \subsection{The \cn{text} command}
 The main use of the command \cn{text} is for words or phrases in a
 display:
-\[\mathbf{y}=\mathbf{y}'\quad\text{if and only if}\quad
+\[\symbf{y}=\symbf{y}'\quad\text{if and only if}\quad
 y'_k=\delta_k y_{\tau(k)}\]
 \begin{verbatim}
-\[\mathbf{y}=\mathbf{y}'\quad\text{if and only if}\quad
+\[\symbf{y}=\symbf{y}'\quad\text{if and only if}\quad
 y'_k=\delta_k y_{\tau(k)}\]
 \end{verbatim}
 
@@ -2214,25 +2209,25 @@ centered, as here:
 
 \subsection{Big-g-g delimiters}
 Here are some big delimiters, first in \cn{normalsize}:
-\[\biggl(\mathbf{E}_{y}
+\[\biggl(\symbf{E}_{y}
   \int_0^{t_\varepsilon}L_{x,y^x(s)}\varphi(x)\,ds
   \biggr)
 \]
 \begin{verbatim}
-\[\biggl(\mathbf{E}_{y}
+\[\biggl(\symbf{E}_{y}
   \int_0^{t_\varepsilon}L_{x,y^x(s)}\varphi(x)\,ds
   \biggr)
 \]
 \end{verbatim}
 and now in \cn{Large} size:
 {\Large
-\[\biggl(\mathbf{E}_{y}
+\[\biggl(\symbf{E}_{y}
   \int_0^{t_\varepsilon}L_{x,y^x(s)}\varphi(x)\,ds
   \biggr)
 \]}
 \begin{verbatim}
 {\Large
-\[\biggl(\mathbf{E}_{y}
+\[\biggl(\symbf{E}_{y}
   \int_0^{t_\varepsilon}L_{x,y^x(s)}\varphi(x)\,ds
   \biggr)
 \]}
@@ -2282,15 +2277,15 @@ the right.
 \begin{equation}
 \begin{split}
 f_{h,\varepsilon}(x,y)
-&=\varepsilon\mathbf{E}_{x,y}\int_0^{t_\varepsilon}
+&=\varepsilon\symbf{E}_{x,y}\int_0^{t_\varepsilon}
 L_{x,y_\varepsilon(\varepsilon u)}\varphi(x)\,du\\
 &= h\int L_{x,z}\varphi(x)\rho_x(dz)\\
-&\quad+h\biggl[\frac{1}{t_\varepsilon}\biggl(\mathbf{E}_{y}
+&\quad+h\biggl[\frac{1}{t_\varepsilon}\biggl(\symbf{E}_{y}
   \int_0^{t_\varepsilon}L_{x,y^x(s)}\varphi(x)\,ds
   -t_\varepsilon\int L_{x,z}\varphi(x)\rho_x(dz)\biggr)\\
 &\phantom{{=}+h\biggl[}+\frac{1}{t_\varepsilon}
-  \biggl(\mathbf{E}_{y}\int_0^{t_\varepsilon}L_{x,y^x(s)}
-    \varphi(x)\,ds -\mathbf{E}_{x,y}\int_0^{t_\varepsilon}
+  \biggl(\symbf{E}_{y}\int_0^{t_\varepsilon}L_{x,y^x(s)}
+    \varphi(x)\,ds -\symbf{E}_{x,y}\int_0^{t_\varepsilon}
    L_{x,y_\varepsilon(\varepsilon s)}
    \varphi(x)\,ds\biggr)\biggr]\\
 &=h\wh{L}_x\varphi(x)+h\theta_\varepsilon(x,y),
@@ -2302,15 +2297,15 @@ Some text after to test the below-display spacing.
 \begin{equation}
 \begin{split}
 f_{h,\varepsilon}(x,y)
-&=\varepsilon\mathbf{E}_{x,y}\int_0^{t_\varepsilon}
+&=\varepsilon\symbf{E}_{x,y}\int_0^{t_\varepsilon}
 L_{x,y_\varepsilon(\varepsilon u)}\varphi(x)\,du\\
 &= h\int L_{x,z}\varphi(x)\rho_x(dz)\\
-&\quad+h\biggl[\frac{1}{t_\varepsilon}\biggl(\mathbf{E}_{y}
+&\quad+h\biggl[\frac{1}{t_\varepsilon}\biggl(\symbf{E}_{y}
   \int_0^{t_\varepsilon}L_{x,y^x(s)}\varphi(x)\,ds
   -t_\varepsilon\int L_{x,z}\varphi(x)\rho_x(dz)\biggr)\\
 &\phantom{{=}+h\biggl[}+\frac{1}{t_\varepsilon}
-  \biggl(\mathbf{E}_{y}\int_0^{t_\varepsilon}L_{x,y^x(s)}
-    \varphi(x)\,ds -\mathbf{E}_{x,y}\int_0^{t_\varepsilon}
+  \biggl(\symbf{E}_{y}\int_0^{t_\varepsilon}L_{x,y^x(s)}
+    \varphi(x)\,ds -\symbf{E}_{x,y}\int_0^{t_\varepsilon}
    L_{x,y_\varepsilon(\varepsilon s)}
    \varphi(x)\,ds\biggr)\biggr]\\
 &=h\wh{L}_x\varphi(x)+h\theta_\varepsilon(x,y),
@@ -2324,15 +2319,15 @@ Unnumbered version:
 \begin{equation*}
 \begin{split}
 f_{h,\varepsilon}(x,y)
-&=\varepsilon\mathbf{E}_{x,y}\int_0^{t_\varepsilon}
+&=\varepsilon\symbf{E}_{x,y}\int_0^{t_\varepsilon}
 L_{x,y_\varepsilon(\varepsilon u)}\varphi(x)\,du\\
 &= h\int L_{x,z}\varphi(x)\rho_x(dz)\\
-&\quad+h\biggl[\frac{1}{t_\varepsilon}\biggl(\mathbf{E}_{y}
+&\quad+h\biggl[\frac{1}{t_\varepsilon}\biggl(\symbf{E}_{y}
   \int_0^{t_\varepsilon}L_{x,y^x(s)}\varphi(x)\,ds
   -t_\varepsilon\int L_{x,z}\varphi(x)\rho_x(dz)\biggr)\\
 &\phantom{{=}+h\biggl[}+\frac{1}{t_\varepsilon}
-  \biggl(\mathbf{E}_{y}\int_0^{t_\varepsilon}L_{x,y^x(s)}
-    \varphi(x)\,ds -\mathbf{E}_{x,y}\int_0^{t_\varepsilon}
+  \biggl(\symbf{E}_{y}\int_0^{t_\varepsilon}L_{x,y^x(s)}
+    \varphi(x)\,ds -\symbf{E}_{x,y}\int_0^{t_\varepsilon}
    L_{x,y_\varepsilon(\varepsilon s)}
    \varphi(x)\,ds\biggr)\biggr]\\
 &=h\wh{L}_x\varphi(x)+h\theta_\varepsilon(x,y),
@@ -2344,15 +2339,15 @@ Some text after to test the below-display spacing.
 \begin{equation*}
 \begin{split}
 f_{h,\varepsilon}(x,y)
-&=\varepsilon\mathbf{E}_{x,y}\int_0^{t_\varepsilon}
+&=\varepsilon\symbf{E}_{x,y}\int_0^{t_\varepsilon}
 L_{x,y_\varepsilon(\varepsilon u)}\varphi(x)\,du\\
 &= h\int L_{x,z}\varphi(x)\rho_x(dz)\\
-&\quad+h\biggl[\frac{1}{t_\varepsilon}\biggl(\mathbf{E}_{y}
+&\quad+h\biggl[\frac{1}{t_\varepsilon}\biggl(\symbf{E}_{y}
   \int_0^{t_\varepsilon}L_{x,y^x(s)}\varphi(x)\,ds
   -t_\varepsilon\int L_{x,z}\varphi(x)\rho_x(dz)\biggr)\\
 &\phantom{{=}+h\biggl[}+\frac{1}{t_\varepsilon}
-  \biggl(\mathbf{E}_{y}\int_0^{t_\varepsilon}L_{x,y^x(s)}
-    \varphi(x)\,ds -\mathbf{E}_{x,y}\int_0^{t_\varepsilon}
+  \biggl(\symbf{E}_{y}\int_0^{t_\varepsilon}L_{x,y^x(s)}
+    \varphi(x)\,ds -\symbf{E}_{x,y}\int_0^{t_\varepsilon}
    L_{x,y_\varepsilon(\varepsilon s)}
    \varphi(x)\,ds\biggr)\biggr]\\
 &=h\wh{L}_x\varphi(x)+h\theta_\varepsilon(x,y),
@@ -2587,19 +2582,19 @@ Some text after to test the below-display spacing.
 \subsection{Gather}
 Numbered version with \verb;\notag; on the second line:
 \begin{gather}
-D(a,r)\equiv\{z\in\mathbf{C}\colon \abs{z-a}<r\},\\
-\seg(a,r)\equiv\{z\in\mathbf{C}\colon
+D(a,r)\equiv\{z\in\symbf{C}\colon \abs{z-a}<r\},\\
+\seg(a,r)\equiv\{z\in\symbf{C}\colon
 \Im z= \Im a,\ \abs{z-a}<r\},\notag\\
-c(e,\theta,r)\equiv\{(x,y)\in\mathbf{C}
+c(e,\theta,r)\equiv\{(x,y)\in\symbf{C}
 \colon \abs{x-e}<y\tan\theta,\ 0<y<r\},\\
 C(E,\theta,r)\equiv\bigcup_{e\in E}c(e,\theta,r).
 \end{gather}
 \begin{verbatim}
 \begin{gather}
-D(a,r)\equiv\{z\in\mathbf{C}\colon \abs{z-a}<r\},\\
-\seg(a,r)\equiv\{z\in\mathbf{C}\colon
+D(a,r)\equiv\{z\in\symbf{C}\colon \abs{z-a}<r\},\\
+\seg(a,r)\equiv\{z\in\symbf{C}\colon
 \Im z= \Im a,\ \abs{z-a}<r\},\notag\\
-c(e,\theta,r)\equiv\{(x,y)\in\mathbf{C}
+c(e,\theta,r)\equiv\{(x,y)\in\symbf{C}
 \colon \abs{x-e}<y\tan\theta,\ 0<y<r\},\\
 C(E,\theta,r)\equiv\bigcup_{e\in E}c(e,\theta,r).
 \end{gather}
@@ -2608,20 +2603,20 @@ C(E,\theta,r)\equiv\bigcup_{e\in E}c(e,\theta,r).
 
 Unnumbered version.
 \begin{gather*}
-D(a,r)\equiv\{z\in\mathbf{C}\colon \abs{z-a}<r\},\\
-\seg (a,r)\equiv\{z\in\mathbf{C}\colon
+D(a,r)\equiv\{z\in\symbf{C}\colon \abs{z-a}<r\},\\
+\seg (a,r)\equiv\{z\in\symbf{C}\colon
 \Im z= \Im a,\ \abs{z-a}<r\},\\
-c(e,\theta,r)\equiv\{(x,y)\in\mathbf{C}
+c(e,\theta,r)\equiv\{(x,y)\in\symbf{C}
  \colon \abs{x-e}<y\tan\theta,\ 0<y<r\},\\
 C(E,\theta,r)\equiv\bigcup_{e\in E}c(e,\theta,r).
 \end{gather*}
 Some text after to test the below-display spacing.
 \begin{verbatim}
 \begin{gather*}
-D(a,r)\equiv\{z\in\mathbf{C}\colon \abs{z-a}<r\},\\
-\seg (a,r)\equiv\{z\in\mathbf{C}\colon
+D(a,r)\equiv\{z\in\symbf{C}\colon \abs{z-a}<r\},\\
+\seg (a,r)\equiv\{z\in\symbf{C}\colon
 \Im z= \Im a,\ \abs{z-a}<r\},\\
-c(e,\theta,r)\equiv\{(x,y)\in\mathbf{C}
+c(e,\theta,r)\equiv\{(x,y)\in\symbf{C}
  \colon \abs{x-e}<y\tan\theta,\ 0<y<r\},\\
 C(E,\theta,r)\equiv\bigcup_{e\in E}c(e,\theta,r).
 \end{gather*}
